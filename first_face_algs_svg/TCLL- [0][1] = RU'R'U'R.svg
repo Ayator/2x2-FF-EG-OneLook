@@ -51,11 +51,11 @@
 			style="fill:#FEFE00;stroke-width:0;stroke-linejoin:round"/>
 	</g>
 	<g style='opacity:1;stroke-linecap:round;font-family:Arial, Helvetica, sans-serif'>
-		<line x1='-0.30246075417434' y1='-0.45084738663025' x2='-0.42859222107034' y2='-0.36621848118842' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='-0.075850866270697' y1='-0.04944266685458' x2='-0.074034000034168' y2='0.15788869909899' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.0089418200401164' y1='-0.025408747880228' x2='0.0083852661130562' y2='0.1832702417613' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.32645844539637' y1='-0.54742371512272' x2='0.22608014678454' y2='-0.46969595602652' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.40436521794952' y1='-0.52981876079307' x2='0.30617374465338' y2='-0.450670208476' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.48227199050267' y1='-0.51221380646343' x2='0.38626734252222' y2='-0.43164446092548' stroke='#808080' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='-0.30246075417434' y1='-0.45084738663025' x2='-0.42859222107034' y2='-0.36621848118842' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='-0.075850866270697' y1='-0.04944266685458' x2='-0.074034000034168' y2='0.15788869909899' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.0089418200401164' y1='-0.025408747880228' x2='0.0083852661130562' y2='0.1832702417613' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.32645844539637' y1='-0.54742371512272' x2='0.22608014678454' y2='-0.46969595602652' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.40436521794952' y1='-0.52981876079307' x2='0.30617374465338' y2='-0.450670208476' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.48227199050267' y1='-0.51221380646343' x2='0.38626734252222' y2='-0.43164446092548' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
 	</g>
 </svg>

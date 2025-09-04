@@ -39,16 +39,21 @@ creds = Credentials.from_service_account_file('../.secure/service_account.json',
 client = gspread.authorize(creds)
 
 sheet = client.open_by_key('1V16uBJmKXKz_2y6ZnAWTsWBr1czWmj5Z_dnmkapD_vI').worksheet('First Face')
-
+    
+raw_base = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/first_face_algs_png/"
 api_url = "https://api.github.com/repos/Ayator/2x2-FF-EG-OneLook/contents/first_face_algs_png"
 response = requests.get(api_url)
 files = response.json()
 
 for file in files:
     filename = file['name']
-    download_url = file['download_url']
+    # if not filename.startswith('T'):
+    #     continue
+    encoded_filename = urllib.parse.quote(filename, safe="'")
+    png_url = raw_base + encoded_filename
+    
     cell = filename_to_cell(filename)
-    formula = f'=IMAGE("{download_url}")'
+    formula = f'=IMAGE("{png_url}")'
     sheet.update(cell, [[formula]], value_input_option='USER_ENTERED')
     print(f"Updated {cell} with image {filename}")
     time.sleep(1)  # To respect GitHub API rate limits
