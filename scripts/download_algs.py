@@ -11,8 +11,8 @@ def downloadFilesFromJSON(jsonFile):
 
 	for s in sets:
 		setName = s['setName']
-		if setName != "TCLL-":
-			continue
+		# if setName != "TCLL-":
+		# 	continue
 		for i, subset in enumerate(s['subsets']):
 			for j, alg in enumerate(subset):
 				c = alg['case']

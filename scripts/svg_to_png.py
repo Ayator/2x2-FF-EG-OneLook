@@ -4,6 +4,8 @@ import subprocess
 def convert_svg_to_png(svg_folder, png_folder):
 	os.makedirs(png_folder, exist_ok=True)
 	for filename in os.listdir(svg_folder):
+		# if not filename.startswith('T'):
+		# 	continue
 		if filename.endswith(".svg"):
 			svg_path = os.path.join(svg_folder, filename)
 
