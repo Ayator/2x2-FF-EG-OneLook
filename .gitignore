@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+*.dll
+*.dylib
+*.pyd
+
+# Virtual environment and package files
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.bak
+*.tmp
+
+# System and other auto-generated files
+.DS_Store
+Thumbs.db
+.secure/
+*.log
+
+# Google API credentials, secrets, and sensitive configs
+client_secrets.json
+service_account.json
+credentials.json
+*.key
+*.pem

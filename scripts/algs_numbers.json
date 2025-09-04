@@ -1,0 +1,3198 @@
+[
+	{
+		"setName" : "TCLL+",
+		"subsets" : [
+			[
+				{
+					"case" : "F'R'FR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=F'R'FR",
+						"&arw=U1U0U2-yellow",
+						"&lab=U1U2U0-white"
+
+					]
+				},
+				{
+					"case" : "R'URUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'URUR'",
+						"&arw=F0B0U3-yellow",
+						"&lab=F0U3B0-white"
+
+					]
+				},
+				{
+					"case" : "zURU'F'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=zURU'F'",
+						"&arw=U1U0U2-yellow",
+						"&lab=U1U2U0-white"
+
+					]
+				},
+				{
+					"case" : "L'ULUL'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'ULUL'",
+						"&arw=F0B0U3-yellow",
+						"&lab=F0U3B0-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "TCLL-",
+		"subsets" : [
+			[
+				{
+					"case" : "R'F'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'F'RF",
+						"&arw=B0U0U2-yellow",
+						"&lab=B0U2U0-white"
+
+					]
+				},
+				{
+					"case" : "RU'R'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R'U'R",
+						"&arw=U2U1F1-yellow",
+						"&lab=U2F1U1-whitei don"
+
+					]
+				},
+				{
+					"case" : "z'FLU'L'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=z'FLU'L'",
+						"&arw=B0U0U2-yellow",
+						"&lab=B0U2U0-white"
+
+					]
+				},
+				{
+					"case" : "LU'L'U'L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU'L'U'L",
+						"&arw=U2U1F1-yellow",
+						"&lab=U2F1U1-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "LS - 123",
+		"subsets" : [
+			[
+				{
+					"case" : "U'L2UL2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'L2UL2'",
+						"&arw=U3U1U0-yellow",
+						"&lab=U3U0U1-white"
+
+					]
+				},
+				{
+					"case" : "L2UL2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L2UL2'",
+						"&arw=U1U0U2-yellow",
+						"&lab=U1U2U0-white"
+
+					]
+				},
+				{
+					"case" : "UL2UL2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UL2UL2'",
+						"&arw=U0U2U3-yellow",
+						"&lab=U0U3U2-white"
+
+					]
+				},
+				{
+					"case" : "U2L2UL2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2L2UL2'",
+						"&arw=U2U3U1-yellow",
+						"&lab=U2U1U3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "UR2U'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2U'R2'",
+						"&arw=U1D1U2-yellow",
+						"&lab=U1U2D1-white"
+
+					]
+				},
+				{
+					"case" : "U2'R2U'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'R2U'R2'",
+						"&arw=U0D1U3-yellow",
+						"&lab=U0U3D1-white"
+
+					]
+				},
+				{
+					"case" : "U'R2U'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2U'R2'",
+						"&arw=U1D1U2-yellow",
+						"&lab=U1U2D1-white"
+
+					]
+				},
+				{
+					"case" : "R2U'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2U'R2'",
+						"&arw=U3D1U0-yellow",
+						"&lab=U3U0D1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U'R2UR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2UR2'",
+						"&arw=U2U0D3-yellow",
+						"&lab=U2D3U0-white"
+
+					]
+				},
+				{
+					"case" : "R2UR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2UR2'",
+						"&arw=U3U2D3-yellow",
+						"&lab=U3D3U2-white"
+
+					]
+				},
+				{
+					"case" : "UR2UR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2UR2'",
+						"&arw=U1U3D3-yellow",
+						"&lab=U1D3U3-white"
+
+					]
+				},
+				{
+					"case" : "U2'R2UR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'R2UR2'",
+						"&arw=U0U1D3-yellow",
+						"&lab=U0D3U1-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "LS - 456",
+		"subsets" : [
+			[
+				{
+					"case" : "U'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'L'UL",
+						"&arw=U3U1L3-yellow",
+						"&lab=U3L3U1-white"
+
+					]
+				},
+				{
+					"case" : "L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'UL",
+						"&arw=U1U0L3-yellow",
+						"&lab=U1L3U0-white"
+
+					]
+				},
+				{
+					"case" : "L'U2L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U2L",
+						"&arw=F0U0F1-yellow",
+						"&lab=F0F1U0-white"
+
+					]
+				},
+				{
+					"case" : "UL'U2L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UL'U2L",
+						"&arw=R0U2R1-yellow",
+						"&lab=R0R1U2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR'",
+						"&arw=L0U2F3-yellow",
+						"&lab=L0F3U2-white"
+
+					]
+				},
+				{
+					"case" : "URUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=URUR'",
+						"&arw=F0U3F3-yellow",
+						"&lab=F0F3U3-white"
+
+					]
+				},
+				{
+					"case" : "U2RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2RUR'",
+						"&arw=R0U1F3-yellow",
+						"&lab=R0F3U1-white"
+
+					]
+				},
+				{
+					"case" : "U'RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RUR'",
+						"&arw=B0U0F3-yellow",
+						"&lab=B0F3U0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U'R'UR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R'UR",
+						"&arw=U2U0R0-yellow",
+						"&lab=U2R0U0-white"
+
+					]
+				},
+				{
+					"case" : "R'UR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'UR",
+						"&arw=U3U2B0-yellow",
+						"&lab=U3B0U2-white"
+
+					]
+				},
+				{
+					"case" : "R'U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U2'R",
+						"&arw=U3B0B2-yellow",
+						"&lab=U3B2B0-white"
+
+					]
+				},
+				{
+					"case" : "UR'U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'U2'R",
+						"&arw=U1L0B2-yellow",
+						"&lab=U1B2L0-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "LS - 789",
+		"subsets" : [
+			[
+				{
+					"case" : "L'U'L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U'L",
+						"&arw=F2U0R1-yellow",
+						"&lab=F2R1U0-white"
+
+					]
+				},
+				{
+					"case" : "UL'U'L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UL'U'L",
+						"&arw=F2U2B1-yellow",
+						"&lab=F2B1U2-white"
+
+					]
+				},
+				{
+					"case" : "U2L'U'L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2L'U'L",
+						"&arw=F2U3L1-yellow",
+						"&lab=F2L1U3-white"
+
+					]
+				},
+				{
+					"case" : "U'L'U'L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'L'U'L",
+						"&arw=F2U1F1-yellow",
+						"&lab=F2F1U1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "URU'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=URU'R'",
+						"&arw=R2R1U2-yellow",
+						"&lab=R2U2R1-white"
+
+					]
+				},
+				{
+					"case" : "U'RU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RU2'R'",
+						"&arw=L0F3L1-yellow",
+						"&lab=L0L1F3-white"
+
+					]
+				},
+				{
+					"case" : "RU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU2'R'",
+						"&arw=F0F3F1-yellow",
+						"&lab=F0F1F3-white"
+
+					]
+				},
+				{
+					"case" : "RU'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R'",
+						"&arw=R2F1U0-yellow",
+						"&lab=R2U0F1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'R",
+						"&arw=U3U0B2-yellow",
+						"&lab=U3B2U0-white"
+
+					]
+				},
+				{
+					"case" : "UR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'U'R",
+						"&arw=U1B2U2-yellow",
+						"&lab=U1U2B2-white"
+
+					]
+				},
+				{
+					"case" : "FR2F'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=FR2F'",
+						"&arw=R1U0R3-yellow",
+						"&lab=R1R3U0-white"
+
+					]
+				},
+				{
+					"case" : "FR'F'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=FR'F'",
+						"&arw=U2U0R1-yellow",
+						"&lab=U2R1U0-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "DD - Bar",
+		"subsets" : [
+			[
+				{
+					"case" : "R'F'L'U2L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'F'L'U2L",
+						"&arw=U1U0U3-yellow",
+						"&lab=U1U3U0-white"
+
+					]
+				},
+				{
+					"case" : "R'U2RU'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U2RU'R'",
+						"&arw=R0B1B0-yellow",
+						"&lab=R0B0B1-white"
+
+					]
+				},
+				{
+					"case" : "L'B'R'U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'B'R'U2'R",
+						"&arw=U3U2B0-yellow",
+						"&lab=U3B0U2-white"
+
+					]
+				},
+				{
+					"case" : "L'U2LU'L'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U2LU'L'",
+						"&arw=F1L0U1-yellow",
+						"&lab=F1U1L0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "LFRU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LFRU2'R'",
+						"&arw=U2F1U0-yellow",
+						"&lab=U2U0F1-white"
+
+					]
+				},
+				{
+					"case" : "RU2'R'UR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU2'R'UR",
+						"&arw=U0F1F0-yellow",
+						"&lab=U0F0F1-white"
+
+					]
+				},
+				{
+					"case" : "LU2L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU2L'UL",
+						"&arw=B1U3L1-yellow",
+						"&lab=B1L1U3-white"
+
+					]
+				},
+				{
+					"case" : "RBLU2L'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RBLU2L'",
+						"&arw=B1U1U2-yellow",
+						"&lab=B1U2U1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RU'R2'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R2'UR'",
+						"&lab=-yeowll"
+					]
+				},
+				{
+					"case" : "RU2R2'UR2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU2R2'UR2",
+						"&lab=-yeowll"
+					]
+				},
+				{
+					"case" : "LU'L2'UL'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU'L2'UL'",
+						"&arw=U3U0R1-yellow",
+						"&lab=U3R1U0-white"
+
+					]
+				},
+				{
+					"case" : "LU2'L2'UL2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU2'L2'UL2",
+						"&arw=B1U3U1-yellow",
+						"&lab=B1U1U3-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "UD - 1 Move D",
+		"subsets" : [
+			[
+				{
+					"case" : "U'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R'",
+						"&arw=R0U1U0-yellow",
+						"&lab=R0U0U1-white"
+
+					]
+				},
+				{
+					"case" : "R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'",
+						"&arw=B0U0U2-yellow",
+						"&lab=B0U2U0-white"
+
+					]
+				},
+				{
+					"case" : "UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'",
+						"&arw=L0U2U3-yellow",
+						"&lab=L0U3U2-white"
+
+					]
+				},
+				{
+					"case" : "U2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'R'",
+						"&arw=F0U3U1-yellow",
+						"&lab=F0U1U3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'R",
+						"&arw=F3U3U1-yellow",
+						"&lab=F3U1U3-white"
+
+					]
+				},
+				{
+					"case" : "U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R",
+						"&arw=F3U1U0-yellow",
+						"&lab=F3U0U1-white"
+
+					]
+				},
+				{
+					"case" : "R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R",
+						"&arw=F3U0U2-yellow",
+						"&lab=F3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "UR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR",
+						"&arw=F3U2U3-yellow",
+						"&lab=F3U3U2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'U'RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'RUR'",
+						"&arw=D3U0U3-yellow",
+						"&lab=D3U3U0-white"
+
+					]
+				},
+				{
+					"case" : "R2'F'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'F'RF",
+						"&arw=D3U0U2-yellow",
+						"&lab=D3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "UR2'F'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2'F'RF",
+						"&arw=D3U2U3-yellow",
+						"&lab=D3U3U2-white"
+
+					]
+				},
+				{
+					"case" : "RUR'U'R2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR'U'R2",
+						"&arw=D3U1U2-yellow",
+						"&lab=D3U2U1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'U'RUR2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'RUR2",
+						"&arw=R1U0U3-yellow",
+						"&lab=R1U3U0-white"
+
+					]
+				},
+				{
+					"case" : "U'LF'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'LF'L'UL",
+						"&arw=U3B4R1-yellow",
+						"&lab=U3R1B4-white"
+
+					]
+				},
+				{
+					"case" : "LF'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LF'L'UL",
+						"&arw=U1B3B1-yellow",
+						"&lab=U1B1B3-white"
+
+					]
+				},
+				{
+					"case" : "RUR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR'U'R",
+						"&arw=F1U1U2-yellow",
+						"&lab=F1U2U1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RU'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R2'",
+						"&arw=B0F1U0-yellow",
+						"&lab=B0U0F1-white"
+
+					]
+				},
+				{
+					"case" : "L'U'LUF'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U'LUF'",
+						"&arw=R2R1R0-yellow",
+						"&lab=R2R0R1-white"
+
+					]
+				},
+				{
+					"case" : "R'URU'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'URU'R'",
+						"&arw=R0R3U2-yellow",
+						"&lab=R0U2R3-white"
+
+					]
+				},
+				{
+					"case" : "U'RU'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RU'R2'",
+						"&arw=R0L1U1-yellow",
+						"&lab=R0U1L1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "UR'UR2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'UR2",
+						"&arw=F3U3L0-yellow",
+						"&lab=F3L0U3-white"
+
+					]
+				},
+				{
+					"case" : "LU'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU'L'UL",
+						"&arw=U3U1L1-yellow",
+						"&lab=U3L1U1-white"
+
+					]
+				},
+				{
+					"case" : "RUR'U'F",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR'U'F",
+						"&arw=L1U1L3-yellow",
+						"&lab=L1L3U1-white"
+
+					]
+				},
+				{
+					"case" : "R'UR2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'UR2",
+						"&arw=F3U2B0-yellow",
+						"&lab=F3B0U2-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "UD - 3 Move D",
+		"subsets" : [
+			[
+				{
+					"case" : "BLU'LUL2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=BLU'LUL2'",
+						"&arw=U3U0U2-yellow",
+						"&lab=U3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "-",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2UR'",
+						"&lab=-yeowll"
+					]
+				},
+				{
+					"case" : "R2UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2UR'",
+						"&arw=L0U2D4-yellow",
+						"&lab=L0D4U2-white"
+
+					]
+				},
+				{
+					"case" : "UR2UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2UR'",
+						"&arw=F0U3D4-yellow",
+						"&lab=F0D4U3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U'R2'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2'U'R",
+						"&arw=R0D1U1-yellow",
+						"&lab=R0U1D1-white"
+
+					]
+				},
+				{
+					"case" : "R2'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'U'R",
+						"&arw=B0D1U0-yellow",
+						"&lab=B0U0D1-white"
+
+					]
+				},
+				{
+					"case" : "-",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2'U'R",
+						"&lab=-yeowll"
+					]
+				},
+				{
+					"case" : "F'L'UL'U'L2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=F'L'UL'U'L2",
+						"&arw=D2U0U2-yellow",
+						"&lab=D2U2U0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RD'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RD'R'",
+						"&arw=U3U0U2-yellow",
+						"&lab=U3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "DRD'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=DRD'R'",
+						"&arw=U3U0U2-yellow",
+						"&lab=U3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "D2RD'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=D2RD'R'",
+						"&arw=U3U0U2-yellow",
+						"&lab=U3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "D'RD'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=D'RD'R'",
+						"&arw=U3U0U2-yellow",
+						"&lab=U3U2U0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "D'R'DR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=D'R'DR",
+						"&arw=F3U0U2-yellow",
+						"&lab=F3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "R'DR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'DR",
+						"&arw=L3U0U2-yellow",
+						"&lab=L3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "DR'DR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=DR'DR",
+						"&arw=B3U0U2-yellow",
+						"&lab=B3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "D2R'DR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=D2R'DR",
+						"&arw=R3U0U2-yellow",
+						"&lab=R3U2U0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U2RU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2RU'R",
+						"&arw=D3B1U3-yellow",
+						"&lab=D3U3B1-white"
+
+					]
+				},
+				{
+					"case" : "U'RU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RU'R",
+						"&arw=D3L1U1-yellow",
+						"&lab=D3U1L1-white"
+
+					]
+				},
+				{
+					"case" : "RU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R",
+						"&arw=D3F1U0-yellow",
+						"&lab=D3U0F1-white"
+
+					]
+				},
+				{
+					"case" : "URU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=URU'R",
+						"&arw=D3R1U2-yellow",
+						"&lab=D3U2R1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U'R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R'UR'",
+						"&arw=B0U0R0-yellow",
+						"&lab=B0R0U0-white"
+
+					]
+				},
+				{
+					"case" : "R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'UR'",
+						"&arw=L0U2B0-yellow",
+						"&lab=L0B0U2-white"
+
+					]
+				},
+				{
+					"case" : "UR'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'UR'",
+						"&arw=F0U3L0-yellow",
+						"&lab=F0L0U3-white"
+
+					]
+				},
+				{
+					"case" : "U2R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2R'UR'",
+						"&arw=R0U1F0-yellow",
+						"&lab=R0F0U1-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "UU - 2 Up",
+		"subsets" : [
+			[
+				{
+					"case" : "U'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2'",
+						"&arw=D3U1U0-yellow",
+						"&lab=D3U0U1-white"
+
+					]
+				},
+				{
+					"case" : "R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'",
+						"&arw=D3U0U2-yellow",
+						"&lab=D3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "UR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR2'",
+						"&arw=D3U2U3-yellow",
+						"&lab=D3U3U2-white"
+
+					]
+				},
+				{
+					"case" : "U2'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'R2'",
+						"&arw=D3U3U1-yellow",
+						"&lab=D3U1U3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'U'RU'R2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'RU'R2'",
+						"&arw=R1L1B2-yellow",
+						"&lab=R1B2L1-white"
+
+					]
+				},
+				{
+					"case" : "RUR'UR2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR'UR2",
+						"&arw=D3F3L0-yellow",
+						"&lab=D3L0F3-white"
+
+					]
+				},
+				{
+					"case" : "LUL'UL2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LUL'UL2",
+						"&arw=B3D0L0-yellow",
+						"&lab=B3L0D0-white"
+
+					]
+				},
+				{
+					"case" : "L'U'LU'L2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U'LU'L2",
+						"&arw=R1L1D2-yellow",
+						"&lab=R1D2L1-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "UU - 1 Up",
+		"subsets" : [
+			[
+				{
+					"case" : "RU2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU2'R",
+						"&arw=D3F3F1-yellow",
+						"&lab=D3F1F3-white"
+
+					]
+				},
+				{
+					"case" : "R'URU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'URU'R",
+						"&arw=F3R3U2-yellow",
+						"&lab=F3U2R3-white"
+
+					]
+				},
+				{
+					"case" : "R'U'R2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'R2",
+						"&arw=F3B2U0-yellow",
+						"&lab=F3U0B2-white"
+
+					]
+				},
+				{
+					"case" : "UR'U'R2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UR'U'R2",
+						"&arw=F3B2U2-yellow",
+						"&lab=F3U2B2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U'RUR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RUR2'",
+						"&arw=R0U0F3-yellow",
+						"&lab=R0F3U0-white"
+
+					]
+				},
+				{
+					"case" : "RUR2'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR2'",
+						"&arw=B0U2F3-yellow",
+						"&lab=B0F3U2-white"
+
+					]
+				},
+				{
+					"case" : "RU'R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R'UR'",
+						"&arw=U3U0R2-yellow",
+						"&lab=U3R2U0-white"
+
+					]
+				},
+				{
+					"case" : "R'U2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U2'R'",
+						"&arw=F0B0B2-yellow",
+						"&lab=F0B2B0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "URUR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=URUR",
+						"&arw=B3U3F3-yellow",
+						"&lab=B3F3U3-white"
+
+					]
+				},
+				{
+					"case" : "R'U2RU'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U2RU'R",
+						"&arw=F3B1B0-yellow",
+						"&lab=F3B0B1-white"
+
+					]
+				},
+				{
+					"case" : "FR'FR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=FR'FR",
+						"&arw=U1U0D1-yellow",
+						"&lab=U1D1U0-white"
+
+					]
+				},
+				{
+					"case" : "RUR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RUR",
+						"&arw=D3U2F3-yellow",
+						"&lab=D3F3U2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'U'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'U'R'",
+						"&arw=R1B2U0-yellow",
+						"&lab=R1U0B2-white"
+
+					]
+				},
+				{
+					"case" : "F'RU'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=F'RU'R'",
+						"&arw=D0F3U0-yellow",
+						"&lab=D0U0F3-white"
+
+					]
+				},
+				{
+					"case" : "RU2R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU2R'UR'",
+						"&arw=R2F1F0-yellow",
+						"&lab=R2F0F1-white"
+
+					]
+				},
+				{
+					"case" : "URU2R'UR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=URU2R'UR'",
+						"&arw=R2R1R0-yellow",
+						"&lab=R2R0R1-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R2'U'RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'U'RUR'",
+						"&arw=F3U0B0-yellow",
+						"&lab=F3B0U0-white"
+
+					]
+				},
+				{
+					"case" : "L2F'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L2F'L'UL",
+						"&arw=U1D0D2-yellow",
+						"&lab=U1D2D0-white"
+
+					]
+				},
+				{
+					"case" : "UL2F'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=UL2F'L'UL",
+						"&arw=U0D0D2-yellow",
+						"&lab=U0D2D0-white"
+
+					]
+				},
+				{
+					"case" : "U2L2F'L'UL",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2L2F'L'UL",
+						"&arw=U2D0D2-yellow",
+						"&lab=U2D2D0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U2'RF'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'RF'RF",
+						"&arw=F3U3U1-yellow",
+						"&lab=F3U1U3-white"
+
+					]
+				},
+				{
+					"case" : "U'RF'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RF'RF",
+						"&arw=F3U1U0-yellow",
+						"&lab=F3U0U1-white"
+
+					]
+				},
+				{
+					"case" : "RF'RF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RF'RF",
+						"&arw=F3U0U2-yellow",
+						"&lab=F3U2U0-white"
+
+					]
+				},
+				{
+					"case" : "R2UR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2UR'U'R",
+						"&arw=D1F1U2-yellow",
+						"&lab=D1U2F1-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "UU - 0 Up",
+		"subsets" : [
+			[
+				{
+					"case" : "R2'U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'U2'R",
+						"&arw=B0D3D1-yellow",
+						"&lab=B0D1D3-white"
+
+					]
+				},
+				{
+					"case" : "U'R2U2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2U2'R'",
+						"&arw=L0D3D1-yellow",
+						"&lab=L0D1D3-white"
+
+					]
+				},
+				{
+					"case" : "R2U2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2U2'R'",
+						"&arw=F0D3D1-yellow",
+						"&lab=F0D1D3-white"
+
+					]
+				},
+				{
+					"case" : "U'R2'U2'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'R2'U2'R",
+						"&arw=R0D3D1-yellow",
+						"&lab=R0D1D3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RU'R'UR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R'UR'U'R",
+						"&arw=U1B2U0-yellow",
+						"&lab=U1U0B2-white"
+
+					]
+				},
+				{
+					"case" : "L'U2L2UL2 ",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'U2L2UL2",
+						"&arw=F2U3U1-yellow",
+						"&lab=F2U1U3-white"
+
+					]
+				},
+				{
+					"case" : "L'ULU'LUL'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'ULU'LUL'",
+						"&arw=U1F2U0-yellow",
+						"&lab=U1U0F2-white"
+
+					]
+				},
+				{
+					"case" : "U'RU'R'UR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RU'R'UR'U'R",
+						"&arw=U3B2U1-yellow",
+						"&lab=U3U1B2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "L'BLU'LUL2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'BLU'LUL2",
+						"&arw=U3F0F2-yellow",
+						"&lab=U3F2F0-white"
+
+					]
+				},
+				{
+					"case" : "RU'RU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'RU2'R'",
+						"&arw=L0D3L1-yellow",
+						"&lab=L0L1D3-white"
+
+					]
+				},
+				{
+					"case" : "R'UR'U'R2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'UR'U'R2",
+						"&arw=U3D1U2-yellow",
+						"&lab=U3U2D1-white"
+
+					]
+				},
+				{
+					"case" : "U2RU'RU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2RU'RU2'R'",
+						"&arw=R0D3R1-yellow",
+						"&lab=R0R1D3-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "LU'LUL2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU'LUL2",
+						"&arw=U3L2U2-yellow",
+						"&lab=U3U2L2-white"
+
+					]
+				},
+				{
+					"case" : "L'UL'U2L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'UL'U2L",
+						"&arw=R0F2R1-yellow",
+						"&lab=R0R1F2-white"
+
+					]
+				},
+				{
+					"case" : "LF'L'UL'U'L2",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LF'L'UL'U'L2",
+						"&arw=F2B3B1-yellow",
+						"&lab=F2B1B3-white"
+
+					]
+				},
+				{
+					"case" : "U2'L'UL'U2L",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2'L'UL'U2L",
+						"&arw=R0F2R1-yellow",
+						"&lab=R0R1F2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "U2RURU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U2RURU2'R'",
+						"&arw=R2D3L0-yellow",
+						"&lab=R2L0D3-white"
+
+					]
+				},
+				{
+					"case" : "U'RURU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=U'RURU2'R'",
+						"&arw=R2D3F0-yellow",
+						"&lab=R2F0D3-white"
+
+					]
+				},
+				{
+					"case" : "RURU2'R'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RURU2'R'",
+						"&arw=R2D3R0-yellow",
+						"&lab=R2R0D3-white"
+
+					]
+				},
+				{
+					"case" : "R2'UR",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R2'UR",
+						"&arw=B0U2D3-yellow",
+						"&lab=B0D3U2-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "RU'RUR'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'RUR'",
+						"&arw=U3U0D3-yellow",
+						"&lab=U3D3U0-white"
+
+					]
+				},
+				{
+					"case" : "RU'R'UF",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=RU'R'UF",
+						"&arw=F3U0L3-yellow",
+						"&lab=F3L3U0-white"
+
+					]
+				},
+				{
+					"case" : "LU'LUL'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=LU'LUL'",
+						"&arw=U3U0B3-yellow",
+						"&lab=U3B3U0-white"
+
+					]
+				}
+			],
+			[
+				{
+					"case" : "R'UR'U'R",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=R'UR'U'R",
+						"&arw=B2D1U2-yellow",
+						"&lab=B2U2D1-white"
+
+					]
+				},
+				{
+					"case" : "L'ULU'F'",
+					"format" : "svg",
+					"url" : [
+						"http://localhost/visualcube.php",
+						"?fmt=svg",
+						"&size=500",
+						"&pzl=2",
+						"&cc=l",
+						"&co=20",
+						"&sch=nttytt",
+						"&r=y30x-30",
+						"&bg=t",
+						"&case=L'ULU'F'",
+						"&arw=R2F0F2-yellow",
+						"&lab=R2F2F0-white"
+
+					]
+				}
+			]
+		]
+	},
+	{
+		"setName" : "DD - No Bar",
+		"subsets" : [
+			[
+				
+			]
+		]
+	}
+]
