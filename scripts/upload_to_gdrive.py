@@ -2,6 +2,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 import os
 from googleapiclient.http import MediaFileUpload
+import json
 
 SCOPES = ['https://www.googleapis.com/auth/drive.file']
 SERVICE_ACCOUNT_FILE = '../.secure/service_account.json'
@@ -10,7 +11,7 @@ creds = service_account.Credentials.from_service_account_file(
     SERVICE_ACCOUNT_FILE, scopes=SCOPES)
 drive_service = build('drive', 'v3', credentials=creds)
 
-folder_id = '1Y5Wj43GbdtScjPo4Y2w-N4yCaWG5q89a'
+folder_id = ''
 png_folder = "../first_face_algs_png"
 file_ids = {}
 
