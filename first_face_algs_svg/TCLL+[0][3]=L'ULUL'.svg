@@ -45,17 +45,17 @@
 	</g>
 	<g style='opacity:1;stroke-opacity:1;stroke-width:0.06;stroke-linecap:round'>
 		<path d="M -0.507024363684,-0.068914154303561 Q 0.24148308336308,-0.34744454418223 0.46415193603053,-0.36784931506247"
-			style="fill:none;stroke:#FEFE00;stroke-opacity:1" />
+			style="fill:none;stroke:#FFFFFF;stroke-opacity:1" />
 		<path transform=" translate(0.46415193603053,-0.36784931506247) scale(0.0165) rotate(-5.2358070956775)"
 			d="M 5.77,0.0 L -2.88,5.0 L -2.88,-5.0 L 5.77,0.0 z"
-			style="fill:#FEFE00;stroke-width:0;stroke-linejoin:round"/>
+			style="fill:#FFFFFF;stroke-width:0;stroke-linejoin:round"/>
 	</g>
 	<g style='opacity:1;stroke-linecap:round;font-family:Arial, Helvetica, sans-serif'>
-		<line x1='-0.50786646833041' y1='-0.17283718131416' x2='-0.49642326449584' y2='0.028589001819908' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.12055944348727' y1='-0.34430712802135' x2='0.0039232579246221' y2='-0.25212718391308' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.20294455048043' y1='-0.32366499311804' x2='0.088704557850749' y2='-0.22967306752507' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.54004780401712' y1='-0.44083103741294' x2='0.5285701656336' y2='-0.25314910972996' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.4641853457076' y1='-0.45829197852812' x2='0.45460951049564' y2='-0.27174281763709' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
-		<line x1='0.38832288739807' y1='-0.47575291964329' x2='0.38064885535769' y2='-0.29033652554421' stroke='#FFFFFF' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='-0.50786646833041' y1='-0.17283718131416' x2='-0.49642326449584' y2='0.028589001819908' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.12055944348727' y1='-0.34430712802135' x2='0.0039232579246221' y2='-0.25212718391308' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.20294455048043' y1='-0.32366499311804' x2='0.088704557850749' y2='-0.22967306752507' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.54004780401712' y1='-0.44083103741294' x2='0.5285701656336' y2='-0.25314910972996' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.4641853457076' y1='-0.45829197852812' x2='0.45460951049564' y2='-0.27174281763709' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
+		<line x1='0.38832288739807' y1='-0.47575291964329' x2='0.38064885535769' y2='-0.29033652554421' stroke='#FEFE00' stroke-width='0.025' stroke-linecap='round' />
 	</g>
 </svg>
