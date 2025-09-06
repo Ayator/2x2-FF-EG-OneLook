@@ -40,11 +40,9 @@ A complete open-source collection of illustrated 2x2 cube First-Face algorithms,
 
 ## Case Example
 
-Example: **TCLL+ Algorithm 0**
-
-- **Case**: `F'R'FR`
-- **Diagram**:  
- ![TCLL-=RU'R'U'R.svg](first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg)
+Example: **TCLL- Example case**
+ <img src="first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg" width="200">
+ <!-- ![TCLL-=RU'R'U'R.svg](first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg) -->
 - **Onelook Solution:**  
   - **Setup**: *R' U R U R'*  
   - **Algorithm:** *R U' R' U' R*
