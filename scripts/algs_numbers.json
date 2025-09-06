@@ -166,7 +166,7 @@
 		]
 	},
 	{
-		"setName" : "LS - 123",
+		"setName" : "LS-123",
 		"subsets" : [
 			[
 				{
@@ -405,7 +405,7 @@
 		]
 	},
 	{
-		"setName" : "LS - 456",
+		"setName" : "LS-456",
 		"subsets" : [
 			[
 				{
@@ -644,7 +644,7 @@
 		]
 	},
 	{
-		"setName" : "LS - 789",
+		"setName" : "LS-789",
 		"subsets" : [
 			[
 				{
@@ -883,7 +883,7 @@
 		]
 	},
 	{
-		"setName" : "DD - Bar",
+		"setName" : "DD-Bar",
 		"subsets" : [
 			[
 				{
@@ -1118,7 +1118,7 @@
 		]
 	},
 	{
-		"setName" : "UD - 1 Move D",
+		"setName" : "UD-1MoveD",
 		"subsets" : [
 			[
 				{
@@ -1591,7 +1591,7 @@
 		]
 	},
 	{
-		"setName" : "UD - 3 Move D",
+		"setName" : "UD-3MoveD",
 		"subsets" : [
 			[
 				{
@@ -2060,7 +2060,7 @@
 		]
 	},
 	{
-		"setName" : "UU - 2 Up",
+		"setName" : "UU-2Up",
 		"subsets" : [
 			[
 				{
@@ -2221,7 +2221,7 @@
 		]
 	},
 	{
-		"setName" : "UU - 1 Up",
+		"setName" : "UU-1Up",
 		"subsets" : [
 			[
 				{
@@ -2694,7 +2694,7 @@
 		]
 	},
 	{
-		"setName" : "UU - 0 Up",
+		"setName" : "UU-0Up",
 		"subsets" : [
 			[
 				{
@@ -3188,7 +3188,7 @@
 		]
 	},
 	{
-		"setName" : "DD - No Bar",
+		"setName" : "DD-NoBar",
 		"subsets" : [
 			[
 				
