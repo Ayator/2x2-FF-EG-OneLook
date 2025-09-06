@@ -34,7 +34,7 @@ def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
 				with open(filepath, 'wb') as outFile:
 					outFile.write(response.content)
 				filenames.append(filename)
-		return filenames
+	return filenames
 
 if __name__ == "__main__":
 	downloadFilesFromJSON('algs_numbers.json')

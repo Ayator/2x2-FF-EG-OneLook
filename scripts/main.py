@@ -10,4 +10,5 @@ def update_sets(setNames = None, row = None, col = None):
     insert_to_sheet.insert_images_to_sheet(filenames=pngFilenames)
 
 if __name__ == "__main__":
-    update_sets()
+    update_sets()  # Update all sets
+    # update_sets(["TCLL-"])
