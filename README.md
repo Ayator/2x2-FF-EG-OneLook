@@ -44,10 +44,11 @@ Example: **TCLL+ Algorithm 0**
 
 - **Case**: `F'R'FR`
 - **Diagram**:  
- ![TCLL+=F'R'FR.png](first_face_algs_png/TCLL%2B%5B0%5D%5B0%5D%3DF%27R%27FR.png)
+ ![TCLL-=RU'R'U'R.svg](first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg)
 - **Onelook Solution:**  
-  - **Setup**: *R F R' F'*  
-  - **Algorithm:** *F' R' F R*
+  - **Setup**: *R' U R U R'*  
+  - **Algorithm:** *R U' R' U' R*
+  - **Outcome:** *[I] will end up at FR, [II] will end up at FL, and [III] will end up at BL*
 
 ***
 
