@@ -24,6 +24,7 @@ build/
 .DS_Store
 Thumbs.db
 .secure/
+.ignore/
 *.log
 
 # Google API credentials, secrets, and sensitive configs
