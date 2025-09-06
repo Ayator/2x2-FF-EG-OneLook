@@ -1,126 +1,98 @@
 ***
 
-# 2x2-FF-EG-OneLook
+# 2x2 First Face EG Algorithms (Onelook)
 
-A fully-automated pipeline to generate, convert, upload, and document 2x2x2 Rubik’s Cube "first face" algorithms—complete with labeled diagrams, case images, and multiple algorithmic transformations—all inserted into a Google Sheet.
+A complete open-source collection of illustrated 2x2 cube EG algorithms, generated with onelook recognition, case images, PNG and SVG algorithm diagrams, auto-generated LaTeX/PDF tables, and Google Sheets integration.
 
-## Overview
+## Table of Contents
 
-This project automates the process of:
-- Generating SVG images for all cube cases and their algorithms.
-- Converting SVGs to PNGs.
-- Committing/ pushing to a Git repo or uploading to Google Drive.
-- Inserting links and readable algorithm text into a shared Google Sheet.
-- Supporting move string manipulation utilities like inverse, rotations, and mirrors.
-
-Algorithms and cases are specified in `algs_numbers.json`. Image generation is done with a local visualcube server, and output is managed for both algorithm (labeled) and case (plain) images.
+- [Files and Structure](#files-and-structure)
+- [Download PDF](#download-pdf)
+- [Case Example](#case-example)
+- [How to Use/Build](#how-to-usebuild)
+- [Credits](#credits)
+- [License](#license)
 
 ***
 
-## Directory Structure
+## Files and Structure
 
+| Folder / File                   | Description                                               |
+|---------------------------------|-----------------------------------------------------------|
+| `algs_numbers.json`             | All EG algorithms and groupings in structured JSON.       |
+| `first_face_algs_svg/`          | SVGs for every algorithm diagram (for LaTeX & reference). |
+| `first_face_case_svg/`          | SVGs for case-only images (unlabeled).                    |
+| `first_face_algs_png/`          | Auto-converted PNGs of all algorithm diagrams.            |
+| `first_face_case_png/`          | PNGs for all cases (unlabeled).                           |
+| `latex/2x2_First_Face_Onelook.tex`  | Auto-generated LaTeX table covering all cases.           |
+| `2x2_First_Face_Onelook.pdf`    | **Compiled PDF** (ready-to-use for reference/print).      |
+| `git_commit_and_push.py`        | Automates git adds/commits for code and diagrams.         |
+| `download_algs.py`, `svg_to_png.py`, ... | Scripts for image and data generation.           |
+| `insert_to_sheet.py`            | Syncs all diagrams & algorithm text to a Google Sheet.    |
+
+***
+
+## Download PDF
+
+- [**Direct link to latest PDF (view/download)**](./2x2_First_Face_Onelook.pdf)
+
+***
+
+## Case Example
+
+Example: **TCLL+ Algorithm 0**
+
+- **Case**: `F'R'FR`
+- **Diagram**:  
+ ![TCLL+=F'R'FR.png](first_face_algs_png/TCLL%2B%5B0%5D%5B0%5D%3DF%27R%27FR.png)
+- **Onelook Solution:**  
+  - **Setup**: *R F R' F'*  
+  - **Algorithm:** *F' R' F R*
+
+Markdown code for this example:
+```markdown
+- **Case**: `F'R'FR`
+- **Diagram**:  
+![TCLL+=F'R'FR.png](first_face_algs_png/TCLL+=F%27R%27FR.png)
+- **Onelook Solution:**  
+  - **Setup**: *R F R' F'*  
+  - **Algorithm:** *F' R' F R*
 ```
-./scripts
-├── algs_numbers.json         # List of algorithm cases, case moves, and labels
-├── algorithm_manager.py      # Move formatting and transformation utilities (inversion, rotations, mirrors)
-├── download_algs.py          # Downloads and saves SVG images for algorithms and cases
-├── svg_to_png.py             # Batch converts SVGs to PNGs using Inkscape
-├── git_commit_and_push.py    # Commits and pushes all generated images (git workflow)
-├── upload_to_gdrive.py       # Uploads PNGs to Google Drive and outputs their IDs (optional)
-├── insert_to_sheet.py        # Inserts images and formatted text to a Google Sheet
-├── main.py                   # Orchestrates the entire workflow
-```
 
 ***
 
-## Pipeline Steps
+## How to Use/Build
 
-1. **Generate Images:**  
-   Run `download_algs.py` to fetch SVGs for all cases and algorithms from the local visualcube server.
-2. **Convert SVG to PNG:**  
-   Use `svg_to_png.py` to batch-convert SVGs to PNGs for both labeled (algorithm) and plain (case) images.
-3. **Commit/Push or Upload:**  
-   - Use `git_commit_and_push.py` to add, commit, and push new/updated images to your git repository, or  
-   - Use `upload_to_gdrive.py` to upload PNGs to your Google Drive folder.
-4. **Insert into Google Sheet:**  
-   Run `insert_to_sheet.py` to update the Google Sheet with:
-   - Case images and algorithm diagrams positioned side-by-side.
-   - Readable algorithm (spaced) and its inverse (setup move) under each image.
-5. **Customize/Extend:**  
-   Algorithm transformations (rotation, mirror, inversion, etc.) are available via `algorithm_manager.py` for use anywhere in the workflow.
-
-***
-
-## Key Scripts
-
-### `download_algs.py`
-- Reads `algs_numbers.json` and generates both labeled (with arrows, labels) and case (plain) SVGs from your visualcube server.
-- Files are organized by type and group for easy access.
-
-### `svg_to_png.py`
-- Converts all SVG files to PNG format using Inkscape.
-- Ensures all images are ready for web/sheet embedding.
-
-### `git_commit_and_push.py`
-- Commits all new/changed `.svg` and `.png` files.
-- Skips commit/push if there are no changes.
-
-### `upload_to_gdrive.py`
-- Uploads new PNG files to a Google Drive folder and returns a mapping of file IDs for public use.
-
-### `insert_to_sheet.py`
-- Authenticates with Google Sheets.
-- Inserts both types of images (side-by-side), readable algorithm, and its inverse under the appropriate images.
-- Handles cell positioning, rate limits, and reporting.
-
-### `algorithm_manager.py`
-- Provides utilities for:
-  - Formatting algorithms (inserting spaces).
-  - Inverting algorithms.
-  - Rotations: x, y, z.
-  - Mirroring: L/R, U/D, F/B.
-  - Applying transformations to whole algorithms.
-
-***
-
-## How to Use
-
-1. **Install requirements:**  
-   - Python 3.x  
-   - Inkscape (for svg to png conversion)  
-   - Required Python packages: `gspread`, `google-api-python-client`, and `google-auth`
-   - Access to a running local visualcube server
-
-2. **Configure Google/Drive:**  
-   - Place your Google API service account JSON in `.secure/` as `service_account.json`.
-
-3. **Populate/modify `algs_numbers.json` as desired.**
-
-4. **Run the workflow:**
-   - Single command:
-     ```sh
-     python main.py
+1. **Dependencies:** Python 3, Inkscape, LaTeX with pdflatex, Google Cloud credentials.
+2. **Generate images:**  
+   - Run `python download_algs.py`
+   - Run `python svg_to_png.py`
+3. **Auto-generate LaTeX/PDF:**  
+   - Run `python export_to_latex.py`
+   - Compile with:  
+     ```bash
+     pdflatex -output-directory=build latex/2x2_First_Face_Onelook.tex
      ```
-     Or customize/set selection in `main.py` or individual scripts.
+     or use `python latex_to_pdf.py`
+4. **Commit changes:**  
+   - Run `python git_commit_and_push.py`
+5. **Update Google Sheet:**  
+   - Run `python insert_to_sheet.py`
+
+For full automation and batch update, use `python main.py`.
 
 ***
 
-## Credits & Thanks
+## Credits
 
-- **visualcube**: For rendering high-quality cube images.
-- **cube.rider.biz**: For online algorithm transformation reference.
-- **Google APIs**: For public Sheets and Drive integration.
-- **CubeRoot**: For source of many first face algorithms.
+Developed by Victor Ayala.  
+Auto-generation by custom scripts and algorithmic formatting tools.
 
 ***
 
 ## License
 
-MIT.
-
-***
-
-**Project maintained by Victor Ayala.**  
-For issues, contact via GitHub or email.
+MIT License (see [LICENSE](LICENSE))  
+Diagrams and scripts may be freely reused with attribution.
 
 ***
