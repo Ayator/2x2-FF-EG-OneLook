@@ -1,80 +1,126 @@
 ***
-# 2x2-FF-EG-OneLook Algorithm Sheet Generator
 
-This repository provides tools to download, convert, and automatically insert algorithm images for the 2x2 First Face EG One-Look method into a Google Sheet. It is intended for speedcubers, programmers, or educators working with algorithm sets and visual representations.
+# 2x2-FF-EG-OneLook
 
-## Features
+A fully-automated pipeline to generate, convert, upload, and document 2x2x2 Rubik’s Cube "first face" algorithms—complete with labeled diagrams, case images, and multiple algorithmic transformations—all inserted into a Google Sheet.
 
-- **Download SVG Images**: Automatically downloads algorithm visualizations in SVG format based on input from a structured JSON file.
-- **Convert SVG to PNG**: Batch converts all SVG images to PNG using Inkscape for use in environments where SVG is unsupported.
-- **Automated Google Sheets Insertion**: Inserts images into a Google Sheet, mapping logical filenames to grid positions using custom algorithms.
+## Overview
 
-## File Overview
+This project automates the process of:
+- Generating SVG images for all cube cases and their algorithms.
+- Converting SVGs to PNGs.
+- Committing/ pushing to a Git repo or uploading to Google Drive.
+- Inserting links and readable algorithm text into a shared Google Sheet.
+- Supporting move string manipulation utilities like inverse, rotations, and mirrors.
 
-| File                       | Purpose                                                        |
-|----------------------------|----------------------------------------------------------------|
-| `algs_numbers.json`        | Algorithm sets, each with cases and parameters for image URLs [3] |
-| `download_algs.py`         | Downloads SVG images for each algorithm defined in the JSON file [4] |
-| `svg_to_png.py`            | Converts SVG images to PNG format using the Inkscape CLI [2] |
-| `insert_to_sheet.py`       | Inserts PNG images into specific cells of a Google Sheet with formula mapping [1] |
+Algorithms and cases are specified in `algs_numbers.json`. Image generation is done with a local visualcube server, and output is managed for both algorithm (labeled) and case (plain) images.
 
-## Workflow
+***
 
-### 1. Download Algorithm SVGs
+## Directory Structure
 
-Ensure you have Python 3 and required libraries installed (requests, os).  
-Run:
-
-```bash
-python download_algs.py
+```
+./scripts
+├── algs_numbers.json         # List of algorithm cases, case moves, and labels
+├── algorithm_manager.py      # Move formatting and transformation utilities (inversion, rotations, mirrors)
+├── download_algs.py          # Downloads and saves SVG images for algorithms and cases
+├── svg_to_png.py             # Batch converts SVGs to PNGs using Inkscape
+├── git_commit_and_push.py    # Commits and pushes all generated images (git workflow)
+├── upload_to_gdrive.py       # Uploads PNGs to Google Drive and outputs their IDs (optional)
+├── insert_to_sheet.py        # Inserts images and formatted text to a Google Sheet
+├── main.py                   # Orchestrates the entire workflow
 ```
 
-Downloads SVG images into the `first_face_algs_svg` directory.
+***
 
-### 2. Convert SVGs to PNGs
+## Pipeline Steps
 
-Requires [Inkscape](https://inkscape.org/) installed and accessible via the command line.
+1. **Generate Images:**  
+   Run `download_algs.py` to fetch SVGs for all cases and algorithms from the local visualcube server.
+2. **Convert SVG to PNG:**  
+   Use `svg_to_png.py` to batch-convert SVGs to PNGs for both labeled (algorithm) and plain (case) images.
+3. **Commit/Push or Upload:**  
+   - Use `git_commit_and_push.py` to add, commit, and push new/updated images to your git repository, or  
+   - Use `upload_to_gdrive.py` to upload PNGs to your Google Drive folder.
+4. **Insert into Google Sheet:**  
+   Run `insert_to_sheet.py` to update the Google Sheet with:
+   - Case images and algorithm diagrams positioned side-by-side.
+   - Readable algorithm (spaced) and its inverse (setup move) under each image.
+5. **Customize/Extend:**  
+   Algorithm transformations (rotation, mirror, inversion, etc.) are available via `algorithm_manager.py` for use anywhere in the workflow.
 
-```bash
-python svg_to_png.py
-```
+***
 
-Creates PNG copies in the `first_face_algs_png` directory.
+## Key Scripts
 
-### 3. Insert Images to Google Sheets
+### `download_algs.py`
+- Reads `algs_numbers.json` and generates both labeled (with arrows, labels) and case (plain) SVGs from your visualcube server.
+- Files are organized by type and group for easy access.
 
-Requires a valid Google Cloud service account JSON and [gspread](https://github.com/burnash/gspread) installed.
+### `svg_to_png.py`
+- Converts all SVG files to PNG format using Inkscape.
+- Ensures all images are ready for web/sheet embedding.
 
-- Place your service account JSON in a secure directory (`../.secure/service_account.json`).
-- Edit the sheet key and worksheet name in `insert_to_sheet.py` if necessary.
+### `git_commit_and_push.py`
+- Commits all new/changed `.svg` and `.png` files.
+- Skips commit/push if there are no changes.
 
-Run:
+### `upload_to_gdrive.py`
+- Uploads new PNG files to a Google Drive folder and returns a mapping of file IDs for public use.
 
-```bash
-python insert_to_sheet.py
-```
+### `insert_to_sheet.py`
+- Authenticates with Google Sheets.
+- Inserts both types of images (side-by-side), readable algorithm, and its inverse under the appropriate images.
+- Handles cell positioning, rate limits, and reporting.
 
-Images will be inserted into mapped cells of the sheet using the `=IMAGE(url)` formula.
+### `algorithm_manager.py`
+- Provides utilities for:
+  - Formatting algorithms (inserting spaces).
+  - Inverting algorithms.
+  - Rotations: x, y, z.
+  - Mirroring: L/R, U/D, F/B.
+  - Applying transformations to whole algorithms.
 
-## Requirements
+***
 
-- Python 3
-- Modules: requests, gspread, google-auth, json
-- Service account JSON file for Google Sheets API
-- Inkscape (for SVG-to-PNG conversion)
+## How to Use
 
-## Customizing
+1. **Install requirements:**  
+   - Python 3.x  
+   - Inkscape (for svg to png conversion)  
+   - Required Python packages: `gspread`, `google-api-python-client`, and `google-auth`
+   - Access to a running local visualcube server
 
-- Update `algs_numbers.json` to add or modify algorithm sets, cases, or visualization URLs.
-- Modify `filename_to_cell()` logic in `insert_to_sheet.py` to change mapping schemes.
+2. **Configure Google/Drive:**  
+   - Place your Google API service account JSON in `.secure/` as `service_account.json`.
+
+3. **Populate/modify `algs_numbers.json` as desired.**
+
+4. **Run the workflow:**
+   - Single command:
+     ```sh
+     python main.py
+     ```
+     Or customize/set selection in `main.py` or individual scripts.
+
+***
+
+## Credits & Thanks
+
+- **visualcube**: For rendering high-quality cube images.
+- **cube.rider.biz**: For online algorithm transformation reference.
+- **Google APIs**: For public Sheets and Drive integration.
+- **CubeRoot**: For source of many first face algorithms.
+
+***
 
 ## License
 
-MIT License unless otherwise stated.
+MIT.
 
-## Credits
+***
 
-- Algorithm JSON structure and naming logic © Ayator
-- Visualizations powered by VisualCube
+**Project maintained by Victor Ayala.**  
+For issues, contact via GitHub or email.
 
 ***
