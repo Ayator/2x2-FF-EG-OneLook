@@ -85,8 +85,12 @@ For full automation and batch update, use `python main.py`.
 
 ## Credits
 
-Developed by Victor Ayala.  
+Developed by [Victor Ayala](https://www.worldcubeassociation.org/persons/2014AYAL02?event=222).
 Auto-generation by custom scripts and algorithmic formatting tools.
+
+- **visualcube**: For rendering high-quality cube images.
+- **cube.rider.biz**: For online algorithm transformation reference.
+- **CubeRoot**: For source of many first face algorithms.
 
 ***
 
