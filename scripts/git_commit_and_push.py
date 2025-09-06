@@ -8,9 +8,12 @@ def git_commit_and_push(file_dirs, commit_message, repo_path):
         for file_dir in file_dirs:
             subprocess.run(["git", "add", os.path.join(file_dir, '*.svg')], shell=True)
             subprocess.run(["git", "add", os.path.join(file_dir, '*.png')], shell=True)
-
+        # Check if any changes to commit
+        result = subprocess.run(["git", "diff", "--cached", "--quiet"])
+        if result.returncode == 0:
+            print("No changes to commit.")
+            return
         subprocess.run(["git", "commit", "-m", commit_message], check=True)
-
         subprocess.run(["git", "push"], check=True)
     finally:
         os.chdir(original_cwd)
