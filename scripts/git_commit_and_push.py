@@ -16,7 +16,7 @@ def git_commit_and_push(file_dirs, commit_message, repo_path):
         os.chdir(original_cwd)
 
 if __name__ == "__main__":
-    file_dirs = ["../first_face_algs_svg", "../first_face_algs_png"]
+    file_dirs = ["first_face_algs_svg", "first_face_algs_png"]
     commit_message = "Update alg images"
     repo_path = "../"
     git_commit_and_push(file_dirs, commit_message, repo_path)
