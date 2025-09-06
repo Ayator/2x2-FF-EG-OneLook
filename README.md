@@ -1,8 +1,8 @@
 ***
 
-# 2x2 First Face EG Algorithms (Onelook)
+# 2x2 First Face Algorithms (Onelook)
 
-A complete open-source collection of illustrated 2x2 cube EG algorithms, generated with onelook recognition, case images, PNG and SVG algorithm diagrams, auto-generated LaTeX/PDF tables, and Google Sheets integration.
+A complete open-source collection of illustrated 2x2 cube First-Face algorithms, generated with onelook recognition, case images, PNG and SVG algorithm diagrams, auto-generated LaTeX/PDF tables, and Google Sheets integration.
 
 ## Table of Contents
 
