@@ -49,16 +49,6 @@ Example: **TCLL+ Algorithm 0**
   - **Setup**: *R F R' F'*  
   - **Algorithm:** *F' R' F R*
 
-Markdown code for this example:
-```markdown
-- **Case**: `F'R'FR`
-- **Diagram**:  
-![TCLL+=F'R'FR.png](first_face_algs_png/TCLL+=F%27R%27FR.png)
-- **Onelook Solution:**  
-  - **Setup**: *R F R' F'*  
-  - **Algorithm:** *F' R' F R*
-```
-
 ***
 
 ## How to Use/Build
