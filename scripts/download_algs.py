@@ -10,7 +10,6 @@ def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
 	os.makedirs("../first_face_algs_svg", exist_ok=True)
 
 	filenames = []
-
 	for s in sets:
 		setName = s['setName']
 		if onlySets is not None and setName not in onlySets:
@@ -26,12 +25,13 @@ def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
 				c = alg['case']
 				url = ''.join(alg['url'])
 				fmt = alg['format']
-				filename = f"../first_face_algs_svg/{setName}[{i}][{j}]={c}.{fmt}"
+				filename = f"{setName}[{i}][{j}]={c}.{fmt}"
+				filepath = f"../first_face_algs_svg/{filename}"
 				print(filename)
 				print(url)
 				response = requests.get(url)
 				response.raise_for_status()
-				with open(filename, 'wb') as outFile:
+				with open(filepath, 'wb') as outFile:
 					outFile.write(response.content)
 				filenames.append(filename)
 		return filenames

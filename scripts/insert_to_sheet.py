@@ -23,9 +23,11 @@ mapGroupToRow = {
 def filename_to_cell(filename):
     # Example filename: "UU-1Up[4][3]=U2L2F'L'UL.png"
     match = re.match(r"^(.*?)\[(\d+)\]\[(\d+)\]=", filename)
+    print(filename, match)
     if not match:
         raise ValueError(f"Filename does not match expected pattern: {filename}")
     group, i, j = match.group(1), int(match.group(2)), int(match.group(3))
+    print(group, i, j)
     base_row = mapGroupToRow[group]
     row = base_row + i * 2
     column = ord('B') + j * 2  # B=66, D=68, F=70, H=72
@@ -54,7 +56,7 @@ def insert_images_to_sheet(filenames = None):
         formula = f'=IMAGE("{png_url}")'
         sheet.update(cell, [[formula]], value_input_option='USER_ENTERED')
         print(f"Updated {cell} with image {filename}")
-        time.sleep(1)  # To respect GitHub API rate limits
+        time.sleep(1.1)  # To respect GitHub API rate limits
 
 if __name__ == "__main__":
     insert_images_to_sheet()

@@ -8,6 +8,7 @@ def convert_svg_to_png(svg_folder, png_folder, filenames = None):
 
 	pngFilenames = []
 	for filename in filenames:
+		print("Filename is: ",filename, "\n")
 		if not filename.endswith(".svg"):
 			continue
 		svg_path = os.path.join(svg_folder, filename)
