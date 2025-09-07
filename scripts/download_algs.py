@@ -4,12 +4,14 @@ import os
 import re
 
 def get_arw_from_lab(lab):
-    # Match indices and color from lab string
-    match = re.match(r"([A-Z]\d)([A-Z]\d)([A-Z]\d)", lab)
-    if not match:
-        raise ValueError(f"Unexpected LAB format: {lab}")
-    first, second, third = match.groups()
-    return f"{first}{third}{second}"
+	if lab == "":
+		return ""
+	# Match indices and color from lab string
+	match = re.match(r"([A-Z]\d)([A-Z]\d)([A-Z]\d)", lab)
+	if not match:
+		raise ValueError(f"Unexpected LAB format: {lab}")
+	first, second, third = match.groups()
+	return f"{first}{third}{second}"
 
 def build_algorithm_url(c, arw, lab):
     return (
@@ -42,13 +44,13 @@ def build_case_url(c):
     )
 	
 
-def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
+def downloadFilesFromJSON(jsonFile, algFilePath, caseFilePath, onlySets = None, row = None, col = None):
 	with open(jsonFile, 'r') as f:
 		sets = json.load(f)
 
     # Ensure the images folders exists
-	os.makedirs("../first_face_algs_svg", exist_ok=True)
-	os.makedirs("../first_face_case_svg", exist_ok=True)
+	os.makedirs(algFilePath, exist_ok=True)
+	os.makedirs(caseFilePath, exist_ok=True)
 
 	filenames = []
 	for s in sets:
@@ -72,8 +74,8 @@ def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
 				caseUrl = build_case_url(c)
 
 				filename = f"{setName}[{i}][{j}]={c}.svg"
-				algFilepath = f"../first_face_algs_svg/{filename}"
-				caseFilepath = f"../first_face_case_svg/{filename}"
+				algFilepath = f"{algFilePath}/{filename}"
+				caseFilepath = f"{caseFilePath}/{filename}"
 
 				print(filename)
 				print(algFilepath)
@@ -94,4 +96,8 @@ def downloadFilesFromJSON(jsonFile, onlySets = None, row = None, col = None):
 	return filenames
 
 if __name__ == "__main__":
-	downloadFilesFromJSON('algs_numbers.json')
+	downloadFilesFromJSON(
+        '../assets/algs_numbers.json',
+        "../assets/first_face_algs_svg",
+        "../assets/first_face_case_svg"
+    )

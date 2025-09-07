@@ -27,7 +27,12 @@ def git_commit_and_push(file_dirs, tex_path, pdf_path, commit_message, repo_path
         os.chdir(original_cwd)
 
 if __name__ == "__main__":
-    file_dirs = ["first_face_algs_svg", "first_face_algs_png"]
+    file_dirs = [
+        "assets/first_face_algs_svg",
+        "assets/first_face_algs_png",
+        "assets/first_face_case_svg",
+        "assets/first_face_case_png"
+    ]
     tex_path = os.path.join("../latex", "2x2_First_Face_Onelook.tex")
     pdf_path = os.path.join("../", "2x2_First_Face_Onelook.pdf")
     commit_message = "Update alg images and documents"

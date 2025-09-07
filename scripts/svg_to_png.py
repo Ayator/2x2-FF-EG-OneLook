@@ -21,4 +21,11 @@ def convert_svg_to_png(svg_folder, png_folder, filenames = None):
 	return pngFilenames
 
 if __name__ == "__main__":
-	convert_svg_to_png("../first_face_algs_svg", "../first_face_algs_png")
+	convert_svg_to_png(
+		"../assets/first_face_algs_svg",
+		"../assets/first_face_algs_png"
+	)
+	convert_svg_to_png(
+        "../assets/first_face_case_svg",
+        "../assets/first_face_case_png"
+	)

@@ -24,7 +24,7 @@ mapGroupToRow = {
 def filename_to_cell(filename):
     # Example filename: "UU-1Up[4][3]=U2L2F'L'UL.png"
     match = re.match(r"^(.*?)\[(\d+)\]\[(\d+)\]=", filename)
-    print(filename, match)
+    # print(filename, match)
     if not match:
         raise ValueError(f"Filename does not match expected pattern: {filename}")
     group, i, j = match.group(1), int(match.group(2)), int(match.group(3))
@@ -64,13 +64,13 @@ def insert_images_to_sheet(filenames = None):
     client = gspread.authorize(creds)
     sheet = client.open_by_key('1V16uBJmKXKz_2y6ZnAWTsWBr1czWmj5Z_dnmkapD_vI').worksheet('First Face')
         
-    case_base = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/first_face_case_png/"
-    alg_base = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/first_face_algs_png/"
-    
+    case_base = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/assets/first_face_case_png/"
+    alg_base = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/assets/first_face_algs_png/"
+
     # If no filenames provided, fetch all PNG filenames from the GitHub repository
     # the files generated in first_face_case_png and first_face_algs_png should match
     if filenames is None:
-        api_url = "https://api.github.com/repos/Ayator/2x2-FF-EG-OneLook/contents/first_face_algs_png"
+        api_url = "https://api.github.com/repos/Ayator/2x2-FF-EG-OneLook/contents/assets/first_face_algs_png"
         response = requests.get(api_url)
         files = response.json()
         filenames = [file['name'] for file in files]

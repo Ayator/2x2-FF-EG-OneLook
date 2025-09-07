@@ -67,7 +67,7 @@ def generate_latex_table(json_path, png_dir, output_tex, title="2x2 First Face A
 
 if __name__ == "__main__":
     generate_latex_table(
-        "algs_numbers.json",
-        "../first_face_algs_png",
+        "../assets/algs_numbers.json",
+        "../assets/first_face_algs_png",
         "../latex/2x2_First_Face_Onelook.tex"
     )
