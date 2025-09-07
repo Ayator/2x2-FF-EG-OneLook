@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./AlgorithmCard.css";
+import "./css/AlgorithmCard.css";
 
 function AlgorithmCard({ setupAlg, solutionAlg, setupImg, solutionImg }) {
   const [flipped, setFlipped] = useState(false);

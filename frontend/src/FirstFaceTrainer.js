@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import AlgorithmCard from "./AlgorithmCard";
-import { Algorithm } from "./algorithmManager";
+import { Algorithm } from "./utils/algorithmManager";
 
 const assetsPath = "https://raw.githubusercontent.com/Ayator/2x2-FF-EG-OneLook/main/assets";
 const jsonUrl = `${assetsPath}/algs_numbers.json`;

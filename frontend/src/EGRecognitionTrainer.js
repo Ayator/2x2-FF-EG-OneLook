@@ -1,35 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
+import SequenceRenderer from "./SequenceRenderer";
+import AnswerHexRow from "./AnswerHexRow";
+
 // OLL cases and orientations
-const ollCases = [
-  { triple: "---", ollCase: "SUNE", orientation: "B" },
-  { triple: "--0", ollCase: "SUNE", orientation: "L" },
-  { triple: "-0-", ollCase: "SUNE", orientation: "F" },
-  { triple: "0--", ollCase: "SUNE", orientation: "R" },
-  { triple: "++0", ollCase: "ANTISUNE", orientation: "B" },
-  { triple: "+0+", ollCase: "ANTISUNE", orientation: "L" },
-  { triple: "0++", ollCase: "ANTISUNE", orientation: "F" },
-  { triple: "+++", ollCase: "ANTISUNE", orientation: "R" },
-  { triple: "0-0", ollCase: "L", orientation: "B" },
-  { triple: "-0+", ollCase: "L", orientation: "L" },
-  { triple: "0+0", ollCase: "L", orientation: "F" },
-  { triple: "+0-", ollCase: "L", orientation: "R" },
-  { triple: "-00", ollCase: "T", orientation: "R" },
-  { triple: "00+", ollCase: "T", orientation: "B" },
-  { triple: "0+-", ollCase: "T", orientation: "L" },
-  { triple: "+-0", ollCase: "T", orientation: "F" },
-  { triple: "00-", ollCase: "U", orientation: "B" },
-  { triple: "0-+", ollCase: "U", orientation: "L" },
-  { triple: "-+0", ollCase: "U", orientation: "F" },
-  { triple: "+00", ollCase: "U", orientation: "R" },
-  { triple: "++-", ollCase: "PI", orientation: "R" },
-  { triple: "+--", ollCase: "PI", orientation: "B" },
-  { triple: "--+", ollCase: "PI", orientation: "L" },
-  { triple: "-++", ollCase: "PI", orientation: "F" },
-  { triple: "+-+", ollCase: "H", orientation: "L" },
-  { triple: "-+-", ollCase: "H", orientation: "F" },
-  { triple: "+-+", ollCase: "H", orientation: "R" },
-  { triple: "-+-", ollCase: "H", orientation: "B" },
-];
+import { ollCases } from "./data/ollCases";
+import { ollImage } from "./utils/ollUtils";
+
 const answerHex = [
   [{ label: "SUNE" }, { label: "ANTISUNE" }],
   [{ label: "T" }, { label: "L" }, { label: "U" }],
@@ -37,59 +13,9 @@ const answerHex = [
 ];
 const directionNames = ["Up", "Right", "Down", "Left"];
 const directionMap = { Up: "B", Right: "R", Down: "F", Left: "L" };
-const colorHexes = {
-  White: "#f8f8f6", Yellow: "#ffe844", Blue: "#3f69ff", Green: "#38c177", Red: "#ed3261", Orange: "#ffa656"
-};
+
 const colorNames = ["White", "Yellow", "Blue", "Green", "Red", "Orange"];
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
-function renderSequence({ caseObj, colors, seqStep }) {
-  // Create sequence: char0, col0, char1, col1, char2, col2
-  let items = [];
-  for (let i = 0; i < 3; ++i) {
-    items.push({ type: "char", value: caseObj.triple[i], key: `char${i}` });
-    items.push({ type: "color", value: colors[i], key: `col${i}` });
-  }
-  const curr = items[seqStep];
-  if (!curr) return null;
-  return (
-    <div style={{
-      minHeight: "240px",
-      width: "100vw",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      marginBottom: "28px"
-    }}>
-      {curr.type === "char" ? (
-        <div style={{
-          fontSize: "3.3rem",
-          fontWeight: 700,
-          color: "#43669B",
-          background: "#e9f1fa",
-          borderRadius: "16px",
-          boxShadow: "0 4px 28px #99bafe27",
-          width: "100px",
-          height: "100px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
-          {curr.value}
-        </div>
-      ) : (
-        <div style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "16px",
-          background: colorHexes[curr.value] ?? "#aaa",
-          boxShadow: `0 4px 32px ${colorHexes[curr.value] ?? "#bbb"}55`,
-          border: "2px solid #bcd",
-          display: "flex"
-        }} />
-      )}
-    </div>
-  );
-}
 
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
   const [phase, setPhase] = useState("showing");
@@ -130,9 +56,6 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     setTimeout(() => setSeqStep(s => s + 1), duration * 1000 + pause * 1000);
   }, [seqStep, phase, duration, pause]);
 
-  function ollImage(oll, orientation = "F") {
-    return `/oll_cases/${oll}_${orientation}.jpg`;
-  }
   function overlayPosition(rect, direction) {
     if (!rect) return { left: "50vw", top: "50vh", transform: "translate(-50%,-50%)" };
     const centerX = rect.left + rect.width / 2 + window.scrollX;
@@ -264,8 +187,8 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     }}>
       <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG OLL Recognition Trainer</h2>
       {phase === "showing" && (
-        caseObj && renderSequence({ caseObj, colors, seqStep })
-        )}
+        caseObj && <SequenceRenderer caseObj={caseObj} colors={colors} seqStep={seqStep} />
+      )}
 
       {phase === "answer" && (
         <div style={{
@@ -275,98 +198,32 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
           marginBottom: "12px"
         }}>
             {/* Top row: 2 */}
-            <div style={{
-            position: "absolute",
-            left: "50%", top: "10%",
-            transform: "translate(-50%,0)",
-            display: "flex", justifyContent: "center", gap: "24px"
-            }}>
-            {answerHex[0].map(({ label }, hexIdx) => {
-                const flatIdx = hexIdx;
-                return (
-                <button
-                    key={label}
-                    ref={el => buttonRefs.current[flatIdx] = el}
-                    style={{
-                    background: "#dbeafe", borderRadius: "20px", border: "none",
-                    width: "140px", height: "140px", cursor: "pointer",
-                    boxShadow: "0 6px 28px #c6dbfe44",
-                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                    position: "relative"
-                    }}
-                    onPointerDown={e => onAnswerPointerDown(label, e, flatIdx)}
-                >
-                    <img src={ollImage(label, "F")} alt={label+" F"}
-                    style={{
-                        width:"120px",height:"120px",marginTop:"10px",borderRadius:"16px",border:"3px solid #99b",
-                        userSelect:"none", pointerEvents:"none"
-                    }} draggable={false}/>
-                </button>
-                );
-            })}
-            </div>
+            <AnswerHexRow
+                rowCases={answerHex[0]}
+                ollImage={ollImage}
+                orientation={"F"}
+                onAnswerPointerDown={onAnswerPointerDown}
+                positionMapKey={"top"}
+                buttonRefs={buttonRefs}
+            />
             {/* Middle row: 3 */}
-            <div style={{
-            position: "absolute",
-            left: "50%", top: "38%",
-            transform: "translate(-50%,0)",
-            display: "flex", justifyContent: "center", gap: "12px"
-            }}>
-            {answerHex[1].map(({ label }, hexIdx) => {
-                const flatIdx = 2 + hexIdx;
-                return (
-                <button
-                    key={label}
-                    ref={el => buttonRefs.current[flatIdx] = el}
-                    style={{
-                    background: "#dbeafe", borderRadius: "20px", border: "none",
-                    width: "140px", height: "140px", cursor: "pointer",
-                    boxShadow: "0 6px 28px #c6dbfe44",
-                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                    position: "relative"
-                    }}
-                    onPointerDown={e => onAnswerPointerDown(label, e, flatIdx)}
-                >
-                    <img src={ollImage(label, "F")} alt={label+" F"}
-                    style={{
-                        width:"120px",height:"120px",marginTop:"10px",borderRadius:"16px",border:"3px solid #99b",
-                        userSelect:"none", pointerEvents:"none"
-                    }} draggable={false}/>
-                </button>
-                );
-            })}
-            </div>
+            <AnswerHexRow
+                rowCases={answerHex[1]}
+                ollImage={ollImage}
+                orientation={"F"}
+                onAnswerPointerDown={onAnswerPointerDown}
+                positionMapKey={"middle"}
+                buttonRefs={buttonRefs}
+            />
             {/* Bottom row: 2 */}
-            <div style={{
-            position: "absolute",
-            left: "50%", top: "66%",
-            transform: "translate(-50%,0)",
-            display: "flex", justifyContent: "center", gap: "24px"
-            }}>
-            {answerHex[2].map(({ label }, hexIdx) => {
-                const flatIdx = 5 + hexIdx;
-                return (
-                <button
-                    key={label}
-                    ref={el => buttonRefs.current[flatIdx] = el}
-                    style={{
-                    background: "#dbeafe", borderRadius: "20px", border: "none",
-                    width: "140px", height: "140px", cursor: "pointer",
-                    boxShadow: "0 6px 28px #c6dbfe44",
-                    display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-                    position: "relative"
-                    }}
-                    onPointerDown={e => onAnswerPointerDown(label, e, flatIdx)}
-                >
-                    <img src={ollImage(label, "F")} alt={label+" F"}
-                    style={{
-                        width:"120px",height:"120px",marginTop:"10px",borderRadius:"16px",border:"3px solid #99b",
-                        userSelect:"none", pointerEvents:"none"
-                    }} draggable={false}/>
-                </button>
-                );
-            })}
-            </div>
+            <AnswerHexRow
+                rowCases={answerHex[2]}
+                ollImage={ollImage}
+                orientation={"F"}
+                onAnswerPointerDown={onAnswerPointerDown}
+                positionMapKey={"bottom"}
+                buttonRefs={buttonRefs}
+            />
 
           {/* Flick overlay and cancel */}
           {flickOverlay && (
