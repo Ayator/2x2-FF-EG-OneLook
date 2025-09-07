@@ -1,0 +1,111 @@
+/* frontend/src/AlgorithmCard.css */
+.card-flip-container {
+  width: 350px;
+  height: 340px;
+  perspective: 1100px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.55s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0px 4px 32px rgba(44, 54, 94, 0.17);
+  background: #eee;
+  border: 1.5px solid #ddd;
+}
+.card-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+.card-flip-front,
+.card-flip-back {
+  position: absolute;
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f7f9fb;
+  padding: 22px;
+  box-sizing: border-box;
+}
+.card-flip-front {
+  z-index: 2;
+}
+.card-flip-back {
+  transform: rotateY(180deg);
+  background: #dbeafe;
+}
+.alg-caption {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #304874;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+.alg-img {
+  max-width: 160px;
+  max-height: 160px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  border: 1px solid #bcd;
+  background: white;
+  box-shadow: 0px 2px 5px rgba(36, 54, 104, 0.07);
+}
+.alg-moves {
+  font-family: 'Consolas', 'Menlo', 'Monaco', monospace;
+  font-size: 1.1rem;
+  color: #405887;
+  text-align: center;
+  margin-top: 7px;
+}
+.swipe-trail {
+  pointer-events: none;
+}
+
+.card-flip-container,
+.card-flip-container * {
+  user-select: none;         /* Modern browsers */
+  -webkit-user-select: none; /* Safari/Chrome */
+  -ms-user-select: none;     /* IE10+/Edge */
+  -moz-user-select: none;    /* Firefox */
+  touch-action: pan-x pan-y; /* Prevents browser gestures interfering with drag */
+}
+
+.scale-in {
+  animation: popInScale 0.4s cubic-bezier(0.33,1,0.68,1);
+}
+@keyframes popInScale {
+  0% {
+    transform: scale(0.75);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.img-pop-in {
+  animation: imgPopInScale 0.36s cubic-bezier(0.33,1,0.68,1);
+}
+
+@keyframes imgPopInScale {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
