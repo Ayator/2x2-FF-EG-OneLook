@@ -42,7 +42,8 @@ A complete open-source collection of illustrated 2x2 cube First-Face algorithms,
 
 | Case 1 | Case 2 |
 |--------|--------|
-| <img src="first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg" width="180"><br><br>**Setup:** *R' U R U R'*<br>**Algorithm:** *R U' R' U' R*<br>**Outcome:** [I] FR, [II] FL, [III] BL | <img src="first_face_algs_svg/TCLL-%5B0%5D%5B3%5D%3DLU'L'U'L.svg" width="180"><br><br>**Setup:** *L' U L U L'*<br>**Algorithm:** *L U' L' U' L*<br>**Outcome:** [I] FR, [II] FL, [III] BL |
+| <img src="first_face_algs_svg/TCLL-%5B0%5D%5B1%5D%3DRU'R'U'R.svg" width="180"><br>**Setup:** *R' U R U R'*<br>**Algorithm:** *R U' R' U' R*<br>**Outcome:** [I] FR, [II] FL, [III] BL | <img src="first_face_algs_svg/TCLL-%5B0%5D%5B3%5D%3DLU'L'U'L.svg" width="180"><br>**Setup:** *L' U L U L'*<br>**Algorithm:** *L U' L' U' L*<br>**Outcome:** [I] FR, [II] FL, [III] BL |
+
 
 ***
 

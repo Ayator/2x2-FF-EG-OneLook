@@ -26,6 +26,7 @@ Thumbs.db
 .secure/
 .ignore/
 *.log
+*.aux
 
 # Google API credentials, secrets, and sensitive configs
 client_secrets.json
