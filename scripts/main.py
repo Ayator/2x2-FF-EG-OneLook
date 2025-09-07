@@ -6,23 +6,23 @@ import export_to_latex
 import latex_to_pdf
 
 def update_sets(setNames = None, row = None, col = None):
-    svgFilenames = download_algs.downloadFilesFromJSON('algs_numbers.json', onlySets=setNames, row=row, col=col)
+    svgFilenames = download_algs.downloadFilesFromJSON('../assets/algs_numbers.json', onlySets=setNames, row=row, col=col)
     
-    pngFilenames = svg_to_png.convert_svg_to_png("../first_face_algs_svg", "../first_face_algs_png", filenames=svgFilenames)
-    svg_to_png.convert_svg_to_png("../first_face_case_svg", "../first_face_case_png")
+    pngFilenames = svg_to_png.convert_svg_to_png("../assets/first_face_algs_svg", "../assets/first_face_algs_png", filenames=svgFilenames)
+    svg_to_png.convert_svg_to_png("../assets/first_face_case_svg", "../assets/first_face_case_png")
     
     export_to_latex.generate_latex_table(
-        "algs_numbers.json",
-        "../first_face_algs_png",
+        "../assets/algs_numbers.json",
+        "../assets/first_face_algs_png",
         "../latex/2x2_First_Face_Onelook.tex"
     )
     latex_to_pdf.compile_latex_to_pdf("../latex/2x2_First_Face_Onelook.tex", "../")
 
     git_commit_and_push.git_commit_and_push([
-            "first_face_algs_svg",
-            "first_face_algs_png",
-            "first_face_case_svg",
-            "first_face_case_png"
+            "assets/first_face_algs_svg",
+            "assets/first_face_algs_png",
+            "assets/first_face_case_svg",
+            "assets/first_face_case_png"
         ],
         "latex/2x2_First_Face_Onelook.tex",
         "2x2_First_Face_Onelook.pdf",
@@ -32,6 +32,6 @@ def update_sets(setNames = None, row = None, col = None):
     insert_to_sheet.insert_images_to_sheet(filenames=pngFilenames)
 
 if __name__ == "__main__":
-    update_sets()  # Update all sets
-    # update_sets(["TCLL+"])
+    # update_sets()  # Update all sets
+    update_sets(["TCLL+"])
     # update_sets(["LS-123"], 1, 2)
