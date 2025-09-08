@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 
 const positionMap = {
-    "top": { top: "10%", extraIndex: 0 },
-    "middle": { top: "38%", extraIndex: 2 },
-    "bottom": { top: "66%", extraIndex: 5 }
+    "top": { top: "0%", extraIndex: 0 },
+    "middle": { top: "1%", extraIndex: 2 },
+    "bottom": { top: "2%", extraIndex: 5 }
 };
 /**
  * AnswerHexRow component
@@ -15,7 +15,7 @@ const positionMap = {
 function AnswerHexRow({ rowCases, ollImage, orientation, onAnswerPointerDown, positionMapKey, buttonRefs }) {
   return (
     <div style={{
-        position: "absolute",
+        position: "relative",
         left: "50%",
         top: positionMap[positionMapKey].top,
         transform: "translate(-50%,0)",

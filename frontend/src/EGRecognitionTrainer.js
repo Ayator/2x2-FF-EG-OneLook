@@ -2,31 +2,31 @@ import React, { useEffect, useState, useRef } from "react";
 import SequenceRenderer from "./SequenceRenderer";
 import AnswerOLL from "./AnswerOLL";
 
-// OLL cases and orientations
 import { ollCases } from "./data/ollCases";
+import { useSpacebarHold } from "./hooks/useSpacebarHold";
 
 const colorNames = ["White", "Yellow", "Blue", "Green", "Red", "Orange"];
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
-    const [phase, setPhase] = useState("showing");
+    const [phase, setPhase] = useState("idle");
+    const [lastResult, setLastResult] = useState(null);
     const [seqStep, setSeqStep] = useState(0);
     const [caseObj, setCaseObj] = useState(null);
     const [colors, setColors] = useState([]);
     
-    const [feedback, setFeedback] = useState("");
-
-    useEffect(() => {
-        if (phase !== "showing") return;
-        console.log("Phase changed to 'showing', selecting new case");
+    // Handle spacebar hold→release for idle→showing
+    useSpacebarHold(100, () => {
+        if (phase === "idle") {
+        // Start new round!
         setCaseObj(pick(ollCases));
         setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
-        setFeedback("");
-        
-        if(seqStep !== 0)
-            setSeqStep(0);
-    }, [phase]);
+        setSeqStep(0);
+        setPhase("showing");
+        }
+    });
 
+    // Show next sequence or transition to answer
     useEffect(() => {
         if (phase !== "showing") return;
         if (seqStep >= 6) {
@@ -36,42 +36,52 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
         setTimeout(() => setSeqStep(s => s + 1), duration * 1000 + pause * 1000);
     }, [seqStep, phase, duration, pause]);
 
+    // Callback from answer phase
     function handleOLLAnswer(isCorrect, oll, orientation) {
-        setFeedback(
-            `Chosen: ${oll} ${orientation}. ` +
-            (isCorrect ? "Correct!" : `Correct: ${caseObj.ollCase} ${caseObj.orientation}`)
-        );
-        setPhase("feedback");
-        setTimeout(() => {
-            setPhase("showing");
-            setSeqStep(0);
-        }, 1400);
+        setLastResult({
+            isCorrect,
+            chosen: { oll, orientation },
+            expected: { oll: caseObj.ollCase, orientation: caseObj.orientation },
+        });
+        setPhase("idle");
     }
 
+    // Render
     return (
         <div style={{
-        minHeight: "100vh",
-        background: "#f2f8fc",
-        display: "flex", flexDirection: "column",
-        alignItems: "center", justifyContent: "center"
+            minHeight: "100vh",
+            background: "#f2f8fc",
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center"
         }}>
             <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG OLL Recognition Trainer</h2>
+            {phase === "idle" && (
+                <div>
+                    <h2>Ready for next round</h2>
+                    {lastResult && (
+                        <div>
+                            <strong>
+                                {lastResult.isCorrect ? "Correct!" : "Incorrect"}
+                            </strong>
+                            <br />
+                            Chosen: {lastResult.chosen.oll} {lastResult.chosen.orientation} <br />
+                            Expected: {lastResult.expected.oll} {lastResult.expected.orientation}
+                        </div>
+                    )}
+                    <p>
+                        Hold <kbd>Space</kbd> for 0.1 seconds, then release to begin.
+                    </p>
+                </div>
+            )}
             {phase === "showing" && (
                 caseObj && <SequenceRenderer caseObj={caseObj} colors={colors} seqStep={seqStep} />
             )}
-
-            {phase === "answer" && (
+            {phase === "answer" && (<>
                 <AnswerOLL
                     caseObj={caseObj}
                     onAnswer={handleOLLAnswer}
                 />
-            )}
-            {phase === "feedback" && (
-                <div style={{
-                color: feedback.includes("Correct!") ? "#129b48" : "#e73b58",
-                fontSize: "1.35rem", marginTop: "38px", textAlign: "center"
-                }}>{feedback}</div>
-            )}
+            </>)}
             <div style={{ marginTop: "44px", color: "#6b85be" }}>
                 Object Duration:&nbsp;
                 <input type="number" min="0.1" max="2" step="0.05" value={duration}
