@@ -18,11 +18,11 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     // Handle spacebar hold→release for idle→showing
     useSpacebarHold(100, () => {
         if (phase === "idle") {
-        // Start new round!
-        setCaseObj(pick(ollCases));
-        setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
-        setSeqStep(0);
-        setPhase("showing");
+            // Start new round!
+            setCaseObj(pick(ollCases));
+            setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
+            setSeqStep(0);
+            setPhase("showing");
         }
     });
 
@@ -33,7 +33,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             setTimeout(() => setPhase("answer"), pause * 1000);
             return;
         }
-        setTimeout(() => setSeqStep(s => s + 1), duration * 1000 + pause * 1000);
+        setTimeout(() => setSeqStep(s => s + 2), duration * 1000 + pause * 1000);
     }, [seqStep, phase, duration, pause]);
 
     // Callback from answer phase
@@ -74,7 +74,11 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 </div>
             )}
             {phase === "showing" && (
-                caseObj && <SequenceRenderer caseObj={caseObj} colors={colors} seqStep={seqStep} />
+                <SequenceRenderer
+                    caseObj={caseObj}
+                    colors={colors}
+                    seqStep={seqStep}
+                />
             )}
             {phase === "answer" && (<>
                 <AnswerOLL

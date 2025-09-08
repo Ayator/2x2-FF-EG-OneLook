@@ -43,12 +43,8 @@ function overlayPosition(rect, direction) {
     return { left: `${x}px`, top: `${y}px`, transform: "translate(-50%,-50%)" };
 }
 
-export default function AnswerOLL({
-    caseObj,
-    onAnswer
-}){
+export default function AnswerOLL({ caseObj, onAnswer }){
     const [flickOverlay, setFlickOverlay] = useState(null);
-    
     const buttonRefs = useRef([]);
 
     const answer = useRef({

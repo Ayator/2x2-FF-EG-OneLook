@@ -11,7 +11,7 @@ const colorHexes = {
  *   colors: array of color strings for each face,
  *   seqStep: number (index of step to display)
  */
-function SequenceRenderer({ caseObj, colors, seqStep }) {
+export default function SequenceRenderer({ caseObj, colors, seqStep, duration, pause, onEnd }) {
   // Create sequence: char0, col0, char1, col1, char2, col2
   let items = [];
   for (let i = 0; i < 3; ++i) {
@@ -19,7 +19,10 @@ function SequenceRenderer({ caseObj, colors, seqStep }) {
     items.push({ type: "color", value: colors[i], key: `col${i}` });
   }
   const curr = items[seqStep];
+  const next = items[seqStep + 1];
   if (!curr) return null;
+  
+  // Render
   return (
     <div style={{
       minHeight: "240px",
@@ -29,35 +32,24 @@ function SequenceRenderer({ caseObj, colors, seqStep }) {
       alignItems: "center",
       marginBottom: "28px"
     }}>
-      {curr.type === "char" ? (
+      {(
         <div style={{
           fontSize: "3.3rem",
           fontWeight: 700,
           color: "#43669B",
-          background: "#e9f1fa",
-          borderRadius: "16px",
-          boxShadow: "0 4px 28px #99bafe27",
-          width: "100px",
-          height: "100px",
-          display: "flex",
           alignItems: "center",
-          justifyContent: "center"
-        }}>
-          {curr.value}
-        </div>
-      ) : (
-        <div style={{
+          justifyContent: "center",
           width: "100px",
           height: "100px",
           borderRadius: "16px",
-          background: colorHexes[curr.value] ?? "#aaa",
-          boxShadow: `0 4px 32px ${colorHexes[curr.value] ?? "#bbb"}55`,
+          background: colorHexes[next.value] ?? "#aaa",
+          boxShadow: `0 4px 32px ${colorHexes[next.value] ?? "#bbb"}55`,
           border: "2px solid #bcd",
           display: "flex"
-        }} />
+        }}>
+          {items[seqStep].value}
+        </div>
       )}
     </div>
   );
 }
-
-export default SequenceRenderer;
