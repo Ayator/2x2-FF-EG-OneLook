@@ -1,0 +1,282 @@
+[
+	{
+		"filename" : "O_VANILLA",
+		"alg" : "",
+		"arw" : ""
+	},
+	{
+		"filename" : "O_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "O_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "O_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "O_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'U",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "O_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "O_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "S_VANILLA",
+		"alg" : "U2RU2R'U'RU'R'",
+		"arw" : ""
+	},
+	{
+		"filename" : "S_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2U2RU2R'U'RU'R'",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "S_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'U2RU2R'U'RU'R'",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "S_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'U2RU2R'U'RU'R'",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "S_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UU2RU2R'U'RU'R'",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "S_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'U2RU2R'U'RU'R'",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "S_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'U2RU2R'U'RU'R'",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "A_VANILLA",
+		"alg" : "U2L'U2LUL'UL",
+		"arw" : ""
+	},
+	{
+		"filename" : "A_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2U2L'U2LUL'UL",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "A_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'U2L'U2LUL'UL",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "A_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'U2L'U2LUL'UL",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "A_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UU2L'U2LUL'UL",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "A_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'U2L'U2LUL'UL",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "A_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'U2L'U2LUL'UL",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "T_VANILLA",
+		"alg" : "RUR2U'RU2R'U2RU'R",
+		"arw" : ""
+	},
+	{
+		"filename" : "T_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2RUR2U'RU2R'U2RU'R",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "T_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'RUR2U'RU2R'U2RU'R",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "T_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'RUR2U'RU2R'U2RU'R",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "T_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'URUR2U'RU2R'U2RU'R",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "T_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'RUR2U'RU2R'U2RU'R",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "T_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'RUR2U'RU2R'U2RU'R",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "L_VANILLA",
+		"alg" : "R2UR'U'RUR'U2RU'RU",
+		"arw" : ""
+	},
+	{
+		"filename" : "L_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2R2UR'U'RUR'U2RU'RU",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "L_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'R2UR'U'RUR'U2RU'RU",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "L_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'R2UR'U'RUR'U2RU'RU",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "L_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UR2UR'U'RUR'U2RU'RU",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "L_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'R2UR'U'RUR'U2RU'RU",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "L_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'R2UR'U'RUR'U2RU'RU",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "U_VANILLA",
+		"alg" : "R'UR'U2RU2R'UR2U'R'",
+		"arw" : ""
+	},
+	{
+		"filename" : "U_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2R'UR'U2RU2R'UR2U'R'",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "U_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'R'UR'U2RU2R'UR2U'R'",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "U_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'R'UR'U2RU2R'UR2U'R'",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "U_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UR'UR'U2RU2R'UR2U'R'",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "U_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'R'UR'U2RU2R'UR2U'R'",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "U_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'R'UR'U2RU2R'UR2U'R'",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "P_VANILLA",
+		"alg" : "U'RU2R2U'R2U'R2U2RU'",
+		"arw" : ""
+	},
+	{
+		"filename" : "P_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2U'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "P_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'U'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "P_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'U'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "P_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UU'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "P_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'U'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "P_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'U'RU2R2U'R2U'R2U2RU'",
+		"arw" : "U1U2-white,U2U1-white"
+	},
+	{
+		"filename" : "H_VANILLA",
+		"alg" : "UR2U2RU2R2",
+		"arw" : ""
+	},
+	{
+		"filename" : "H_LEFT",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2UR2U2RU2R2",
+		"arw" : "U0U2-white,U2U0-white"
+	},
+	{
+		"filename" : "H_RIGHT",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'UR2U2RU2R2",
+		"arw" : "U1U3-white,U3U1-white"
+	},
+	{
+		"filename" : "H_BACK",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'UR2U2RU2R2",
+		"arw" : "U0U1-white,U1U0-white"
+	},
+	{
+		"filename" : "H_FRONT",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UUR2U2RU2R2",
+		"arw" : "U2U3-white,U3U2-white"
+	},
+	{
+		"filename" : "H_DIAGONAL1",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'UR2U2RU2R2",
+		"arw" : "U0U3-white,U3U0-white"
+	},
+	{
+		"filename" : "H_DIAGONAL2",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'UR2U2RU2R2",
+		"arw" : "U1U2-white,U2U1-white"
+	}
+]
