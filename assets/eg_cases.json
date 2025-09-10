@@ -141,37 +141,37 @@
 	},
 	{
 		"filename" : "L_VANILLA",
-		"alg" : "R2UR'U'RUR'U2RU'RU",
+		"alg" : "R2UR'U'RUR'U2RU'RU'",
 		"arw" : ""
 	},
 	{
 		"filename" : "L_LEFT",
-		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2R2UR'U'RUR'U2RU'RU",
+		"alg" : "U2RUR'U'R'FR2U'R'U'RUR'F'U2R2UR'U'RUR'U2RU'RU'",
 		"arw" : "U0U2-white,U2U0-white"
 	},
 	{
 		"filename" : "L_RIGHT",
-		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'R2UR'U'RUR'U2RU'RU",
+		"alg" : "RUR'U'R'FR2U'R'U'RUR'F'R2UR'U'RUR'U2RU'RU'",
 		"arw" : "U1U3-white,U3U1-white"
 	},
 	{
 		"filename" : "L_BACK",
-		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'R2UR'U'RUR'U2RU'RU",
+		"alg" : "URUR'U'R'FR2U'R'U'RUR'F'U'R2UR'U'RUR'U2RU'RU'",
 		"arw" : "U0U1-white,U1U0-white"
 	},
 	{
 		"filename" : "L_FRONT",
-		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UR2UR'U'RUR'U2RU'RU",
+		"alg" : "U'RUR'U'R'FR2U'R'U'RUR'F'UR2UR'U'RUR'U2RU'RU'",
 		"arw" : "U2U3-white,U3U2-white"
 	},
 	{
 		"filename" : "L_DIAGONAL1",
-		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'R2UR'U'RUR'U2RU'RU",
+		"alg" : "FRU'R'U'RUR'F'RUR'U'R'FRF'R2UR'U'RUR'U2RU'RU'",
 		"arw" : "U0U3-white,U3U0-white"
 	},
 	{
 		"filename" : "L_DIAGONAL2",
-		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'R2UR'U'RUR'U2RU'RU",
+		"alg" : "UFRU'R'U'RUR'F'RUR'U'R'FRF'U'R2UR'U'RUR'U2RU'RU'",
 		"arw" : "U1U2-white,U2U1-white"
 	},
 	{
