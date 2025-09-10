@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import SequenceRenderer from "./SequenceRenderer";
 import AnswerOLL from "./AnswerOLL";
+import AnswerPLL from "./AnswerPLL";
 
 import { ollCases } from "./data/ollCases";
 import { useSpacebarHold } from "./hooks/useSpacebarHold";
@@ -15,6 +16,8 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [seqStep, setSeqStep] = useState(0);
     const [caseObj, setCaseObj] = useState(null);
     const [colors, setColors] = useState([]);
+    const [selectedOLL, setSelectedOll] = useState(null);
+    const [selectedOrientation, setSelectedOrientation] = useState("F");
     
     // Handle spacebar hold→release for idle→showing
     useSpacebarHold(100, () => {
@@ -50,6 +53,16 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
         });
         setPhase("idle");
         setJustSubmitted(true);
+    }
+
+    // OLL Input Change Listener
+    function handleOLLInputChange(oll, orientation){
+        setSelectedOll(oll);
+        setSelectedOrientation(orientation);
+    }
+
+    function onPLLSelection(input){
+
     }
 
     // Render
@@ -89,7 +102,13 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             {phase === "answer" && (<>
                 <AnswerOLL
                     caseObj={caseObj}
+                    onOllChange={handleOLLInputChange}
                     onAnswer={handleOLLAnswer}
+                />
+                <AnswerPLL
+                    selectedOLL={selectedOLL}
+                    ollOrientation={selectedOrientation}
+                    onSelection={onPLLSelection}
                 />
             </>)}
             <div style={{ marginTop: "44px", color: "#6b85be" }}>
