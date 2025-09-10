@@ -10,6 +10,7 @@ function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [phase, setPhase] = useState("idle");
+    const [justSubmitted, setJustSubmitted] = useState(false);
     const [lastResult, setLastResult] = useState(null);
     const [seqStep, setSeqStep] = useState(0);
     const [caseObj, setCaseObj] = useState(null);
@@ -18,6 +19,10 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     // Handle spacebar hold→release for idle→showing
     useSpacebarHold(100, () => {
         if (phase === "idle") {
+            if(justSubmitted){
+                setJustSubmitted(false);
+                return;
+            }
             // Start new round!
             setCaseObj(pick(ollCases));
             setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
@@ -44,6 +49,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             expected: { oll: caseObj.ollCase, orientation: caseObj.orientation },
         });
         setPhase("idle");
+        setJustSubmitted(true);
     }
 
     // Render

@@ -1,14 +1,21 @@
 import React, { useState, useEffect, useCallback } from "react";
 import "./css/AlgorithmCard.css";
+import { useFineTap } from "./hooks/useFineTap"
 
 function AlgorithmCard({ setupAlg, solutionAlg, setupImg, solutionImg }) {
+  // Flip logic
   const [flipped, setFlipped] = useState(false);
+  const handleTap = () => setFlipped(f => !f);
+
+  const [onTouchStart, onTouchEnd] = useFineTap(handleTap);
+
   const [imgLoaded, setImgLoaded] = useState(false);
 
   // Which image to show (front or back)?
   const isFront = !flipped;
   const shownImg = isFront ? setupImg : solutionImg;
   const shownAlg = isFront ? setupAlg : solutionAlg;
+
 
   // Reset flip and image load every time card/image changes
   useEffect(() => {
@@ -44,6 +51,8 @@ function AlgorithmCard({ setupAlg, solutionAlg, setupImg, solutionImg }) {
       className="card-flip-container"
       tabIndex={0}
       onClick={() => setFlipped(f => !f)}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
       style={{ cursor: "pointer" }}
     >
       <div className={"card-flip-inner" + (flipped ? " flipped" : "")}>
