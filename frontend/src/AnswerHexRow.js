@@ -14,7 +14,8 @@ const positionMap = {
  */
 function AnswerHexRow({ rowCases, ollImage, orientation, onAnswerPointerDown, positionMapKey, buttonRefs }) {
   return (
-    <div style={{
+    <div
+      style={{
         position: "relative",
         left: "50%",
         top: positionMap[positionMapKey].top,
@@ -22,7 +23,8 @@ function AnswerHexRow({ rowCases, ollImage, orientation, onAnswerPointerDown, po
         display: "flex",
         justifyContent: "center",
         gap: "24px"
-      }}
+      }
+    }
     >
       {rowCases.map(({ label }, hexIdx) => {
         const flatIdx = hexIdx + positionMap[positionMapKey].extraIndex;

@@ -43,7 +43,7 @@ function overlayPosition(rect, direction) {
     return { left: `${x}px`, top: `${y}px`, transform: "translate(-50%,-50%)" };
 }
 
-export default function AnswerOLL({ caseObj, onAnswer }){
+export default function AnswerOLL({ caseObj, onOllChange, onAnswer }){
     const [flickOverlay, setFlickOverlay] = useState(null);
     const buttonRefs = useRef([]);
 
@@ -55,6 +55,13 @@ export default function AnswerOLL({ caseObj, onAnswer }){
     function resetAnswer(){
         answer.current.oll = null;
         answer.current.orientation = "F";
+    }
+
+    function handleOllChange(oll, orientation){
+        answer.current.oll = oll;
+        answer.current.orientation = orientation;
+        if(typeof onOllChange == "function")
+            onOllChange(oll, orientation);
     }
 
     const dragRef = useRef({
@@ -81,7 +88,7 @@ export default function AnswerOLL({ caseObj, onAnswer }){
             currentDirIdx: null,
             currentOrientation: null,
         };
-        answer.current.oll = oll;
+        handleOllChange(oll, answer.current.orientation);
         setFlickOverlay({
             direction: null,
             btnRect: rect,
@@ -103,7 +110,7 @@ export default function AnswerOLL({ caseObj, onAnswer }){
         }
         if (newDirIdx !== null) {
             direction = directionNames[newDirIdx];
-            answer.current.orientation = directionMap[direction];
+            handleOllChange(answer.current.oll, directionMap[direction]);
             if (currentDirIdx !== newDirIdx) {
                 setFlickOverlay({
                     direction,
@@ -165,7 +172,7 @@ export default function AnswerOLL({ caseObj, onAnswer }){
             
             // OLL Selection
             if(ollKeyMap[key]){
-                answer.current.oll = ollKeyMap[key];
+                handleOllChange(ollKeyMap[key], answer.current.orientation);
                 let btnRect = getButtonRefFromOll(answer.current.orientation);
                 setFlickOverlay({
                     direction: null,
@@ -175,7 +182,7 @@ export default function AnswerOLL({ caseObj, onAnswer }){
             }
             // Arrow Selection
             if(arrowMap[e.key]){
-                answer.current.orientation = arrowMap[e.key].orientation;
+                handleOllChange(answer.current.oll, arrowMap[e.key].orientation);
                 if(answer.current.oll){
                     let btnRect = getButtonRefFromOll(answer.current.orientation);
                     setFlickOverlay({
