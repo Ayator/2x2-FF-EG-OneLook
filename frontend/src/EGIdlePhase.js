@@ -1,14 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-    OLL_CODES,
     ROTATION_DEGREES,
     getEGImageSrc,
     getDisplayPLLCase
 } from "./utils/EGUtils";
+import EGTimesSidebar from "./EGTimesSidebar";
 
 const HOLD_TIME_MS = 100;
 
-export default function EGIdlePhase({ onBegin, lastResult }) {
+// Monokai default palette
+const DEFAULT_MONOKAI = {
+  background: "#2d2a2e",
+  panel: "#272822",
+  text: "#f8f8f2",
+  strong: "#e6db74",
+  accent: "#fd971f",
+  border: "#49483e",
+  green: "#a6e22e"
+};
+
+
+export default function EGIdlePhase({ onBegin, lastResult, history = [], timerDisplay, themeColors = DEFAULT_MONOKAI }) {
     const [readyToAdvance, setReadyToAdvance] = useState(false);
     const timerRef = useRef(null);
     const holdActiveRef = useRef(false);
@@ -79,46 +91,70 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
             style={{
-                minHeight: "100vh",
+                position: "fixed",
+                top: "10%",
+                left: 0,
                 display: "flex",
-                flexDirection: "column",
+                flexDirection: "row",
+                height: "100vh",
+                width: "100vw",
                 alignItems: "center",
                 justifyContent: "center",
                 transition: "background 0.18s",
-                background: readyToAdvance ? "#47e47a" : "rgba(0, 221, 255, 0.94)",
-                width: "100%",
+                background: readyToAdvance ? "#47e47a" : themeColors.background,
+                color: themeColors.text,
                 fontSize: 20
             }}
         >
-            {/* EG case image, if any */}
-            {imgSrc && (
-                <img
-                src={imgSrc}
-                alt="Last attempted EG case"
-                style={{
-                    width: "192px", // Adjust size as needed
-                    height: "192px",
-                    marginBottom: 32,
-                    display: "block",
-                    objectFit: "contain",
-                    background: "#fff",
-                    borderRadius: 16,
-                    boxShadow: "0 6px 36px #2237",
-                    border: "2px solid #ddd7",
-                    transform: `rotate(${displayRotation}deg)`
-                }}
-                />
-            )}
-            <div style={{ textAlign: "center" }}>
-                <p>
-                    <b>Hold <kbd>SPACE</kbd> or tap and hold<br/>for {HOLD_TIME_MS} ms, then release to begin.</b>
-                </p>
-                <p style={{
-                    color: readyToAdvance ? "#1d6134" : "#bbb",
-                    marginTop: 36, fontWeight: 600, fontSize: 22, minHeight: 30
-                }}>
-                    {readyToAdvance ? "Ready! Release to start." : ""}
-                </p>
+            {/* Sidebar always rendered first, stays left */}
+            <EGTimesSidebar history={history} />
+            {/* Main content in a flex column at center */}
+            <div style={{
+                flex: 1,
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center", // center horizontally in main area
+                justifyContent: "center", // center vertically
+                minWidth: 0,
+                background: themeColors.panel,
+                color: themeColors.strong
+            }}>
+                {/* Timer */}
+                {timerDisplay}
+                {/* EG case image, if any */}
+                {imgSrc && (
+                    <img
+                    src={imgSrc}
+                    alt="Last attempted EG case"
+                    style={{
+                        width: "192px", // Adjust size as needed
+                        height: "192px",
+                        marginBottom: 32,
+                        display: "block",
+                        objectFit: "contain",
+                        background: "#fff",
+                        borderRadius: 16,
+                        boxShadow: "0 6px 36px #2237",
+                        border: "2px solid #ddd7",
+                        transform: `rotate(${displayRotation}deg)`
+                    }}
+                    />
+                )}
+                <div style={{ textAlign: "center" }}>
+                    <p>
+                        <b>Hold
+                            <kbd style={{background: themeColors.background, color: themeColors.accent}}> SPACE </kbd>
+                            or tap and hold<br/>
+                        </b>
+                    </p>
+                    <p style={{
+                        color: readyToAdvance ? themeColors.green : themeColors.accent,
+                        marginTop: 36, fontWeight: 600, fontSize: 22, minHeight: 30
+                    }}>
+                        {readyToAdvance ? "Ready! Release to start." : ""}
+                    </p>
+                </div>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { formatTimer } from "./utils/EGUtils";
 
 // Monokai-like default
 const MONOKAI_COLORS = {
@@ -11,6 +12,7 @@ export default function EGTimer({
     running = false,
     resetKey = 0, // Use this to force timer reset from parent
     fontSize = 92,
+    onTimerChange = null,
     themeColors = MONOKAI_COLORS,
     shadow = true
 }) {
@@ -20,50 +22,44 @@ export default function EGTimer({
     // Handle running
     useEffect(() => {
         if (running) {
-        intervalRef.current = setInterval(() => {
-            setTime((t) => t + 10);
-        }, 10);
+            intervalRef.current = setInterval(() => {
+                setTime((t) => {
+                    const nt = t + 10;
+                    if (onTimerChange) onTimerChange(nt); // call on every tick
+                    return nt;
+                });
+            }, 10);
         } else {
-        clearInterval(intervalRef.current);
+            clearInterval(intervalRef.current);
         }
         return () => clearInterval(intervalRef.current);
-    }, [running]);
+    }, [running, onTimerChange]);
 
     // Handle reset
     useEffect(() => {
         setTime(0);
     }, [resetKey]);
 
-    // Format MM:SS.CS
-    const mm = String(Math.floor((time / 60000) % 60)).padStart(2, '0');
-    const ss = String(Math.floor((time / 1000) % 60)).padStart(2, '0');
-    const cs = String(Math.floor((time / 10) % 100)).padStart(2, '0');
-
-    // Compose the timer string:
-    let timerText = "";
-    if (mm > 0) {
-        timerText += String(mm).padStart(2, '0') + ":";
-    }
-    timerText += `${ss}.${cs}`;
+    const timerText = formatTimer(time);
 
     return (
         <div style={{
-        background: themeColors.background,
-        borderRadius: 18,
-        padding: "0 22px",
-        textAlign: "center"
+            background: themeColors.background,
+            borderRadius: 18,
+            padding: "0 22px",
+            textAlign: "center"
         }}>
-        <span style={{
-            fontFamily: "monospace, monospace",
-            fontSize,
-            fontWeight: 800,
-            color: themeColors.digits,
-            textShadow: shadow ? `0 2px 36px ${themeColors.shadow}` : undefined,
-            letterSpacing: "0.07em",
-            userSelect: "none"
-        }}>
-            {timerText}
-        </span>
+            <span style={{
+                fontFamily: "monospace, monospace",
+                fontSize,
+                fontWeight: 800,
+                color: themeColors.digits,
+                textShadow: shadow ? `0 2px 36px ${themeColors.shadow}` : undefined,
+                letterSpacing: "0.07em",
+                userSelect: "none"
+            }}>
+                {timerText}
+            </span>
         </div>
     );
 }

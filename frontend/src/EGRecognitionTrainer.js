@@ -97,6 +97,11 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     // timer
     const [timerRunning, setTimerRunning] = useState(false);
     const [timerResetKey, setTimerResetKey] = useState(0);
+    const [timerValue, setTimerValue] = useState(0);
+    const [history, setHistory] = useState([]);
+
+    
+    document.title = "EG Trainer";
 
     function handleBegin() {
         if (phase !== "idle") return;
@@ -146,12 +151,17 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             setLastResult({
                 oll: selectedOLL,
                 orientation: selectedOrientation,
-                pll: selectedPLL
+                pll: selectedPLL,
+                time: timerValue
             });
+            setHistory(h => [...h, { oll: selectedOLL, orientation: selectedOrientation, pll: selectedPLL, time: timerValue }]);
             setPhase("idle");
         }
     }, [selectedOLL, selectedOrientation, selectedPLL, caseObj]);
 
+    const timerDisplay = (
+        <EGTimer running={timerRunning} resetKey={timerResetKey} onTimerChange={setTimerValue} />
+    );
 
     // Render
     return (
@@ -161,16 +171,18 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center"
         }}>
-            <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG Recognition Trainer</h2>
-            <EGTimer running={timerRunning} resetKey={timerResetKey} />
+            <h2 style={{ color: "#324b74", marginBottom: "24px", position: "fixed", top: 0 }}>EG Recognition Trainer</h2>
             {phase === "idle" && (
                 <EGIdlePhase
                     onBegin={handleBegin}
                     lastResult={lastResult}
+                    history={history}
+                    timerDisplay={timerDisplay}
                 />
             )}
             {phase === "showing" && (
                 <>
+                {timerDisplay}
                 <EGSequenceRenderer
                     caseObj={caseObj}
                     colors={colors}
@@ -178,8 +190,9 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 />
                 </>
             )}
-            {phase === "answer" && (
-                /* Responsive flex for answer section */ 
+            {phase === "answer" && (<>
+                {timerDisplay}
+                {/* Responsive flex for answer section */}
                 <div style={{
                     display: "flex",
                     flexDirection: orientation === "portrait" ? "column" : "row",
@@ -197,7 +210,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                         ollOrientation={selectedOrientation}
                         onPllChange={pll => setSelectedPLL(pll)}
                     />
-                </div>
+                </div></>
             )}
             <div style={{ marginTop: "44px", color: "#6b85be" }}>
                 Object Duration:&nbsp;

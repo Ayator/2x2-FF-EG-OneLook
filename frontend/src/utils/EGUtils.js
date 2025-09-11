@@ -75,3 +75,24 @@ export function getDisplayPLLCase(logicalPerm, orientation = "F") {
     const displayIdx = (logicalIdx + steps) % PLL_CASES.length;
     return PLL_CASES[displayIdx];
 }
+
+// Timer
+
+export function formatTimer(ms) {
+    // Format MM:SS.CS
+    const mm = String(Math.floor((ms / 60000) % 60)).padStart(2, '0');
+    const ss = String(Math.floor((ms / 1000) % 60)).padStart(2, '0');
+    const cs = String(Math.floor((ms / 10) % 100)).padStart(2, '0');
+    // Compose the timer string:
+    return mm > 0 ? `${mm}:${ss}.${cs}` : `${ss}.${cs}`;
+}
+
+export function avg12(times) {
+    if (times.length < 12) return "-";
+    const last12 = times.slice(-12).map(s => s.time);
+    const best = Math.min(...last12), worst = Math.max(...last12);
+    const trimmed = last12.filter(t => t !== best && t !== worst);
+    if (trimmed.length < 10) return "-";
+    const avg = Math.round(trimmed.reduce((a, b) => a + b, 0) / trimmed.length);
+    return formatTimer(avg);
+}
