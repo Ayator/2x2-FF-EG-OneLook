@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import EGIdlePhase from "./EGIdlePhase";
-import SequenceRenderer from "./SequenceRenderer";
+import EGSequenceRenderer from "./EGSequenceRenderer";
 import EGAnswerOLL from "./EGAnswerOLL";
 import EGAnswerPLL from "./EGAnswerPLL";
 
@@ -154,7 +154,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 />
             )}
             {phase === "showing" && (
-                <SequenceRenderer
+                <EGSequenceRenderer
                     caseObj={caseObj}
                     colors={colors}
                     seqStep={seqStep}
