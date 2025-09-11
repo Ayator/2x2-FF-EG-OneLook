@@ -69,7 +69,7 @@ function animateAngle(current, target, setAngle, duration = 300) {
     return () => cancelAnimationFrame(req);
 }
 
-export default function AnswerPLL({ caseObj, selectedOLL, ollOrientation = "F", onPllChange }) {
+export default function EGAnswerPLL({ caseObj, selectedOLL, ollOrientation = "F", onPllChange }) {
     const [caseType, setCaseType] = useState("VANILLA");
     const dragState = useRef({ startPiece: null, currentPiece: null });
     const [touchStartPiece, setTouchStartPiece] = useState(null); // for display only

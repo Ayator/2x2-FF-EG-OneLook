@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import SequenceRenderer from "./SequenceRenderer";
-import AnswerOLL from "./AnswerOLL";
-import AnswerPLL from "./AnswerPLL";
+import EGAnswerOLL from "./EGAnswerOLL";
+import EGAnswerPLL from "./EGAnswerPLL";
 import KeybindingsOverlay from "./utils/KeybindingsOverlay";
 import { useOrientation } from "./hooks/useOrientation";
 import EGIdlePhase from "./EGIdlePhase";
@@ -77,7 +77,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             display: "flex", flexDirection: "column",
             alignItems: "center", justifyContent: "center"
         }}>
-            <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG OLL Recognition Trainer</h2>
+            <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG Recognition Trainer</h2>
             {phase === "idle" && (
                 <EGIdlePhase
                     onBegin={handleBegin}
@@ -96,16 +96,16 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 <div style={{
                     display: "flex",
                     flexDirection: orientation === "portrait" ? "column" : "row",
-                    alignItems: "stretch", // or "center" if you want both to be vertically centered
+                    alignItems: "stretch", // or "center"
                     justifyContent: "center",
                     gap: 22
                 }}>
-                    <AnswerOLL
+                    <EGAnswerOLL
                         caseObj={caseObj}
                         onOllChange={(oll, orientation) => { setSelectedOLL(oll); setSelectedOrientation(orientation); }}
                         onAnswer={handleOLLAnswer}
                     />
-                    <AnswerPLL
+                    <EGAnswerPLL
                         caseObj={caseObj}
                         selectedOLL={selectedOLL}
                         ollOrientation={selectedOrientation}
