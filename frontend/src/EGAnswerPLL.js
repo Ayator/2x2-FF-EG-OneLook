@@ -1,43 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { OLL_CODES, ROTATION_DEGREES } from "./utils/ollUtils";
-import { egImagesFolder } from  "./utils/locationUtils"
-
-// The moves as start/end pairs in order: BACK, DIAG1, RIGHT, DIAG2, FRONT, DIAG1, LEFT, DIAG2
-const MOVES = [
-    ["BL", "BR"],   // 0 BACK
-    ["BL", "FR"],   // 1 DIAGONAL1
-    ["BR", "FR"],   // 2 RIGHT
-    ["BR", "FL"],   // 3 DIAGONAL2
-    ["FR", "FL"],   // 4 FRONT
-    ["FR", "BL"],   // 5 DIAGONAL1 (reverse)
-    ["FL", "BL"],   // 6 LEFT
-    ["FL", "BR"],   // 7 DIAGONAL2 (reverse)
-];
-
-const PIECE_KEY_MAP = {
-  d: "BL",
-  f: "BR",
-  c: "FL",
-  v: "FR",
-};
-
-const CASES = ["BACK", "DIAGONAL1", "RIGHT", "DIAGONAL2", "FRONT", "DIAGONAL1", "LEFT", "DIAGONAL2"];
-const ORIENT_TO_STEPS = { F: 0, R: 2, B: 4, L: 6 }; // Each orientation is 2 steps in this 8-direction list
-
-function getMoveIndex(start, end) {
-    for (let i = 0; i < 8; i++) {
-        if ((MOVES[i][0] === start && MOVES[i][1] === end) ||
-            (MOVES[i][1] === start && MOVES[i][0] === end)) {
-        return i;
-        }
-    }
-    return null;
-}
-
-function getImageSrc(ollName, caseType) {
-    const code = ollName ? OLL_CODES[ollName.toUpperCase()] : "O";
-    return `${egImagesFolder}/${code}_${caseType}.svg`;
-}
+import {
+    ROTATION_DEGREES,
+    PIECE_KEY_MAP,
+    PLL_CASES,
+    ORIENT_TO_STEPS,
+    getMoveIndex,
+    getEGImageSrc,
+    getDisplayPLLCase
+} from "./utils/EGUtils";
 
 function animateAngle(current, target, setAngle, duration = 300) {
     let start;
@@ -94,21 +64,7 @@ export default function EGAnswerPLL({ caseObj, selectedOLL, ollOrientation = "F"
     }, [ollOrientation]);
 
     useEffect(() => {
-        // For vanilla, always show vanilla
-        if (logicalPerm === "VANILLA") {
-            setCaseType("VANILLA");
-            return;
-        }
-        // Find the index of the logicalPerm in CASES array
-        const logicalIdx = CASES.findIndex(v => v === logicalPerm);
-        if (logicalIdx === -1) {
-            setCaseType("VANILLA");
-            return;
-        }
-        // Visually rotate clockwise by the OLL orientation steps
-        const steps = ORIENT_TO_STEPS[ollOrientation || "F"];
-        const displayIdx = (logicalIdx + steps) % 8;
-        setCaseType(CASES[displayIdx]);
+        setCaseType(getDisplayPLLCase(logicalPerm, ollOrientation));
     }, [logicalPerm, ollOrientation]);
 
     // key input logic
@@ -135,8 +91,8 @@ export default function EGAnswerPLL({ caseObj, selectedOLL, ollOrientation = "F"
                 const end = piece;
                 let moveIdx = getMoveIndex(start, end);
                 if (moveIdx !== null) {
-                    setLogicalPerm(CASES[moveIdx]);
-                    if (typeof onPllChange === "function") onPllChange(CASES[moveIdx]);
+                    setLogicalPerm(PLL_CASES[moveIdx]);
+                    if (typeof onPllChange === "function") onPllChange(PLL_CASES[moveIdx]);
                 } else {
                     setLogicalPerm("VANILLA");
                     if (typeof onPllChange === "function") onPllChange("VANILLA");
@@ -218,8 +174,8 @@ export default function EGAnswerPLL({ caseObj, selectedOLL, ollOrientation = "F"
         if (start && end && start !== end) {
             let moveIdx = getMoveIndex(start, end);
             if (moveIdx !== null) {
-                setLogicalPerm(CASES[moveIdx]); // This is always the "cube logic" value
-                if (typeof onPllChange === "function") onPllChange(CASES[moveIdx]);
+                setLogicalPerm(PLL_CASES[moveIdx]); // This is always the "cube logic" value
+                if (typeof onPllChange === "function") onPllChange(PLL_CASES[moveIdx]);
             }
         } else {
             setLogicalPerm("VANILLA");
@@ -242,7 +198,7 @@ export default function EGAnswerPLL({ caseObj, selectedOLL, ollOrientation = "F"
     }
 
     // Render
-    const imgSrc = getImageSrc(selectedOLL, caseType);
+    const imgSrc = getEGImageSrc(selectedOLL, caseType);
 
     return (
         <div style={{

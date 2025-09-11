@@ -1,5 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { OLL_CODES, ROTATION_DEGREES } from "./utils/ollUtils";
+import {
+    OLL_CODES,
+    ROTATION_DEGREES,
+    getEGImageSrc,
+    getDisplayPLLCase
+} from "./utils/EGUtils";
 
 const HOLD_TIME_MS = 100;
 
@@ -61,38 +66,30 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
         };
     }, [readyToAdvance, onBegin]);
 
-    function getEGImageSrc(lastResult) {
-        if (
-            !lastResult ||
-            !lastResult.oll ||
-            !lastResult.orientation ||
-            !lastResult.pll
-        )
-            return null;
-        const ollCode = OLL_CODES[lastResult.oll.toUpperCase()] || "O";
-        const orientation = lastResult.orientation.toUpperCase();
-        const pll = lastResult.pll.toUpperCase();
-        return `./eg_cases/${ollCode}_${pll}.svg`;
+    let imgSrc = null;
+    let displayRotation = 0;
+    if (lastResult && lastResult.oll && lastResult.orientation && lastResult.pll){
+        console.log(lastResult);
+        const displayPLL = getDisplayPLLCase(lastResult.pll, lastResult.orientation);
+        imgSrc = getEGImageSrc(lastResult?.oll, displayPLL);
+        displayRotation = ROTATION_DEGREES[lastResult.orientation] ?? 0;
     }
-
-    const imgSrc = getEGImageSrc(lastResult);
-    const degrees = (lastResult && ROTATION_DEGREES[lastResult.orientation?.toUpperCase?.()]) ?? 0;
 
     return (
         <div
-        onTouchStart={onTouchStart}
-        onTouchEnd={onTouchEnd}
-        style={{
-            minHeight: "100vh",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            transition: "background 0.18s",
-            background: readyToAdvance ? "#47e47a" : "rgba(0, 221, 255, 0.94)",
-            width: "100%",
-            fontSize: 20
-        }}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            style={{
+                minHeight: "100vh",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                transition: "background 0.18s",
+                background: readyToAdvance ? "#47e47a" : "rgba(0, 221, 255, 0.94)",
+                width: "100%",
+                fontSize: 20
+            }}
         >
             {/* EG case image, if any */}
             {imgSrc && (
@@ -109,7 +106,7 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
                     borderRadius: 16,
                     boxShadow: "0 6px 36px #2237",
                     border: "2px solid #ddd7",
-                    transform: `rotate(${degrees}deg)`
+                    transform: `rotate(${displayRotation}deg)`
                 }}
                 />
             )}
