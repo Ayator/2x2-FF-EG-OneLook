@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import SequenceRenderer from "./SequenceRenderer";
 import AnswerOLL from "./AnswerOLL";
 import AnswerPLL from "./AnswerPLL";
+import KeybindingsOverlay from "./utils/KeybindingsOverlay";
 
 import { ollCases } from "./data/ollCases";
 import { useSpacebarHold } from "./hooks/useSpacebarHold";
@@ -11,21 +12,17 @@ function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
 
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [phase, setPhase] = useState("idle");
-    const [justSubmitted, setJustSubmitted] = useState(false);
     const [lastResult, setLastResult] = useState(null);
     const [seqStep, setSeqStep] = useState(0);
     const [caseObj, setCaseObj] = useState(null);
     const [colors, setColors] = useState([]);
-    const [selectedOLL, setSelectedOll] = useState(null);
+    const [selectedOLL, setSelectedOLL] = useState(null);
     const [selectedOrientation, setSelectedOrientation] = useState("F");
+    const [selectedPLL, setSelectedPLL] = useState("VANILLA");
     
     // Handle spacebar hold→release for idle→showing
     useSpacebarHold(100, () => {
         if (phase === "idle") {
-            if(justSubmitted){
-                setJustSubmitted(false);
-                return;
-            }
             // Start new round!
             setCaseObj(pick(ollCases));
             setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
@@ -52,18 +49,27 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             expected: { oll: caseObj.ollCase, orientation: caseObj.orientation },
         });
         setPhase("idle");
-        setJustSubmitted(true);
     }
 
-    // OLL Input Change Listener
-    function handleOLLInputChange(oll, orientation){
-        setSelectedOll(oll);
-        setSelectedOrientation(orientation);
-    }
+    useEffect(() => {
+        // This effect runs whenever any answer is updated.
+        if (!caseObj) return;
+        // Compare all
+        const correctOLL = selectedOLL === caseObj.ollCase;
+        const correctOrientation = selectedOrientation === caseObj.orientation || (
+            caseObj.ollCase === "H" && (
+                (["L", "R"].includes(caseObj.orientation) && ["L", "R"].includes(selectedOrientation)) ||
+                (["F", "B"].includes(caseObj.orientation) && ["F", "B"].includes(selectedOrientation))
+            )
+        );
+        const correctPLL = selectedPLL === caseObj.pllCase; // or whatever field(s) hold the correct PLL info
 
-    function onPLLSelection(input){
+        if (correctOLL && correctOrientation && correctPLL) {
+            // All correct! End the phase after a short delay for feedback, or immediately.
+            setTimeout(() => setPhase("idle"), 500);
+        }
+    }, [selectedOLL, selectedOrientation, selectedPLL, caseObj]);
 
-    }
 
     // Render
     return (
@@ -102,13 +108,14 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             {phase === "answer" && (<>
                 <AnswerOLL
                     caseObj={caseObj}
-                    onOllChange={handleOLLInputChange}
+                    onOllChange={(oll, orientation) => { setSelectedOLL(oll); setSelectedOrientation(orientation); }}
                     onAnswer={handleOLLAnswer}
                 />
                 <AnswerPLL
+                    caseObj={caseObj}
                     selectedOLL={selectedOLL}
                     ollOrientation={selectedOrientation}
-                    onSelection={onPLLSelection}
+                    onPllChange={pll => setSelectedPLL(pll)}
                 />
             </>)}
             <div style={{ marginTop: "44px", color: "#6b85be" }}>
@@ -120,6 +127,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 onChange={e => window.location.reload()}
                 style={{ width: 50 }} /> sec
             </div>
+            <KeybindingsOverlay />
         </div>
     );
 }

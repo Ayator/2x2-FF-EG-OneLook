@@ -69,7 +69,7 @@ function animateAngle(current, target, setAngle, duration = 300) {
     return () => cancelAnimationFrame(req);
 }
 
-export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelection }) {
+export default function AnswerPLL({ caseObj, selectedOLL, ollOrientation = "F", onPllChange }) {
     const [caseType, setCaseType] = useState("VANILLA");
     const dragState = useRef({ startPiece: null, currentPiece: null });
     const [touchStartPiece, setTouchStartPiece] = useState(null); // for display only
@@ -85,6 +85,15 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
     const [displayedDegrees, setDisplayedDegrees] = useState(0);  // Actual rotation on img
     const lastOrientationRef = useRef(ollOrientation);
     const rotationDuration = 150;
+
+    // Reset internal state when caseObj changes (new round)
+    useEffect(() => {
+        setLogicalPerm("VANILLA");
+        setCaseType("VANILLA");
+        setTouchStartPiece(null);
+        setCurrentPiece(null);
+        setKeyDownPiece(null);
+    }, [caseObj.ollCase, caseObj.orientation]);
 
     useEffect(() => {
         const targetDegrees = ROTATION_DEGREES[ollOrientation] || 0;
@@ -122,7 +131,7 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
             if (k === "x") {
                 setKeyDownPiece(null);
                 setLogicalPerm("VANILLA");
-                if (typeof onSelection === "function") onSelection("VANILLA");
+                if (typeof onPllChange === "function") onPllChange("VANILLA");
                 return;
             }
             if (!(k in PIECE_KEY_MAP)) return;
@@ -132,7 +141,7 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
                 // First key - just set vanilla, remember key
                 setKeyDownPiece(piece);
                 setLogicalPerm("VANILLA");
-                if (typeof onSelection === "function") onSelection("VANILLA");
+                if (typeof onPllChange === "function") onPllChange("VANILLA");
             } else if (keyDownPiece && piece !== keyDownPiece) {
                 // Second key - select permutation
                 const start = keyDownPiece;
@@ -140,10 +149,10 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
                 let moveIdx = getMoveIndex(start, end);
                 if (moveIdx !== null) {
                     setLogicalPerm(CASES[moveIdx]);
-                    if (typeof onSelection === "function") onSelection(CASES[moveIdx]);
+                    if (typeof onPllChange === "function") onPllChange(CASES[moveIdx]);
                 } else {
                     setLogicalPerm("VANILLA");
-                    if (typeof onSelection === "function") onSelection("VANILLA");
+                    if (typeof onPllChange === "function") onPllChange("VANILLA");
                 }
                 setKeyDownPiece(null);
             }
@@ -161,7 +170,7 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
             window.removeEventListener("keydown", onKeyDown);
             window.removeEventListener("keyup", onKeyUp);
         };
-    }, [keyDownPiece, setLogicalPerm, onSelection]);
+    }, [keyDownPiece, setLogicalPerm, onPllChange]);
 
     // Get piece under touch/click position
     function getPieceFromCoords(x, y) {
@@ -223,11 +232,11 @@ export default function AnswerPLL({ selectedOLL, ollOrientation = "F", onSelecti
             let moveIdx = getMoveIndex(start, end);
             if (moveIdx !== null) {
                 setLogicalPerm(CASES[moveIdx]); // This is always the "cube logic" value
-                if (typeof onSelection === "function") onSelection(CASES[moveIdx]);
+                if (typeof onPllChange === "function") onPllChange(CASES[moveIdx]);
             }
         } else {
             setLogicalPerm("VANILLA");
-            if (typeof onSelection === "function") onSelection("VANILLA");
+            if (typeof onPllChange === "function") onPllChange("VANILLA");
         }
         dragState.current.startPiece = null;
         dragState.current.currentPiece = null;
