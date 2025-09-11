@@ -3,6 +3,7 @@ import SequenceRenderer from "./SequenceRenderer";
 import AnswerOLL from "./AnswerOLL";
 import AnswerPLL from "./AnswerPLL";
 import KeybindingsOverlay from "./utils/KeybindingsOverlay";
+import { useOrientation } from "./hooks/useOrientation"; // or your path
 
 import { ollCases } from "./data/ollCases";
 import { useSpacebarHold } from "./hooks/useSpacebarHold";
@@ -19,6 +20,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [selectedOLL, setSelectedOLL] = useState(null);
     const [selectedOrientation, setSelectedOrientation] = useState("F");
     const [selectedPLL, setSelectedPLL] = useState("VANILLA");
+    const orientation = useOrientation();
     
     // Handle spacebar hold→release for idle→showing
     useSpacebarHold(100, () => {
@@ -105,19 +107,28 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                     seqStep={seqStep}
                 />
             )}
-            {phase === "answer" && (<>
-                <AnswerOLL
-                    caseObj={caseObj}
-                    onOllChange={(oll, orientation) => { setSelectedOLL(oll); setSelectedOrientation(orientation); }}
-                    onAnswer={handleOLLAnswer}
-                />
-                <AnswerPLL
-                    caseObj={caseObj}
-                    selectedOLL={selectedOLL}
-                    ollOrientation={selectedOrientation}
-                    onPllChange={pll => setSelectedPLL(pll)}
-                />
-            </>)}
+            {phase === "answer" && (
+                /* Responsive flex for answer section */ 
+                <div style={{
+                    display: "flex",
+                    flexDirection: orientation === "portrait" ? "column" : "row",
+                    alignItems: "stretch", // or "center" if you want both to be vertically centered
+                    justifyContent: "center",
+                    gap: 22
+                }}>
+                    <AnswerOLL
+                        caseObj={caseObj}
+                        onOllChange={(oll, orientation) => { setSelectedOLL(oll); setSelectedOrientation(orientation); }}
+                        onAnswer={handleOLLAnswer}
+                    />
+                    <AnswerPLL
+                        caseObj={caseObj}
+                        selectedOLL={selectedOLL}
+                        ollOrientation={selectedOrientation}
+                        onPllChange={pll => setSelectedPLL(pll)}
+                    />
+                </div>
+            )}
             <div style={{ marginTop: "44px", color: "#6b85be" }}>
                 Object Duration:&nbsp;
                 <input type="number" min="0.1" max="2" step="0.05" value={duration}

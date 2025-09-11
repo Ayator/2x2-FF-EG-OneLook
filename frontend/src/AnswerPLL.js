@@ -262,10 +262,7 @@ export default function AnswerPLL({ caseObj, selectedOLL, ollOrientation = "F", 
             width: "100%",
             maxWidth: 350,
             aspectRatio: "1",
-            border: "4px solid #ddd",
-            borderRadius: 16,
             overflow: "hidden",
-            boxSizing: "border-box",
             position: "relative",
             margin: "0 auto"
         }}>
