@@ -19,45 +19,49 @@ const KEY_WIDTHS = [
 ];
 
 // Custom highlight for keybindings
-const KEY_ACTIONS = {
+const defaultKeyActions = {
     "A": "ANTI SUNE", "S": "SUNE", "T": "T", "L": "L", "U": "U",
     "P": "PI", "H": "H", "↑": "Back OLL", "↓": "Front OLL",
     "→": "Right OLL", "←": "Left OLL", "Space": "Hold: Start Round",
     "D": "PLL BL", "F": "PLL BR", "C": "PLL FL", "V": "PLL FR", "X": "PLL Reset"
 };
 
-const SIDEBAR_ACTIONS = [
+const defaultSidebarActions = [
     { key: "A", label: "OLL: ANTISUNE" }, { key: "S", label: "OLL: SUNE" }, { key: "T", label: "OLL: T" },
     { key: "L", label: "OLL: L" }, { key: "U", label: "OLL: U" }, { key: "P", label: "OLL: PI" }, { key: "H", label: "OLL: H" },
     { key: "Space", label: "Hold: Start Round" }, { key: "←↑→↓", label: "OLL Orientation" },
     { key: "D F C V", label: "PLL Piece Select" }, { key: "X", label: "PLL Reset" }
 ];
 
+const monokaiColors = {
+    background: "#272822",
+    panelBg: "#30302c",
+    panelShadow: "0 0 60px #000a",
+    panelBorderRadius: 34,
+    keyboardKeyBg: "#49483e",
+    keyboardKeyBorder: "#75715E",
+    keyboardKeyText: "#F8F8F2",
+    keyboardKeyShadow: "0 2px 8px #1e1e1e",
+    keyboardKeyActiveBg: "#FFD86644",
+    keyboardKeyActiveBorder: "#FFD866",
+    keyboardKeyActiveText: "#282828",
+    keyboardKeyActiveShadow: "0 2px 8px #FFD86633",
+    keyboardKeyBadgeBg: "#FFE792",
+    keyboardKeyBadgeText: "#272822",
+    keyboardKeyBadgeBorderRadius: 6,
+    sidebarContainerBg: "#23241f",
+    sidebarContainerShadow: "0 4px 24px #000a",
+    sidebarContainerBorderRadius: 18,
+    sidebarKeyBg: "#FFD86633",
+    sidebarKeyText: "#F8F8F2",
+    sidebarKeyBorder: "#FFD866",
+    sidebarLabelText: "#A6E22E",
+};
+
 export default function KeybindingsOverlay({
-    colors = {
-        background: "#272822",
-        panelBg: "#30302c",
-        panelShadow: "0 0 60px #000a",
-        panelBorderRadius: 34,
-        keyboardKeyBg: "#49483e",
-        keyboardKeyBorder: "#75715E",
-        keyboardKeyText: "#F8F8F2",
-        keyboardKeyShadow: "0 2px 8px #1e1e1e",
-        keyboardKeyActiveBg: "#FFD86644",
-        keyboardKeyActiveBorder: "#FFD866",
-        keyboardKeyActiveText: "#282828",
-        keyboardKeyActiveShadow: "0 2px 8px #FFD86633",
-        keyboardKeyBadgeBg: "#FFE792",
-        keyboardKeyBadgeText: "#272822",
-        keyboardKeyBadgeBorderRadius: 6,
-        sidebarContainerBg: "#23241f",
-        sidebarContainerShadow: "0 4px 24px #000a",
-        sidebarContainerBorderRadius: 18,
-        sidebarKeyBg: "#FFD86633",
-        sidebarKeyText: "#F8F8F2",
-        sidebarKeyBorder: "#FFD866",
-        sidebarLabelText: "#A6E22E",
-    }
+    colors = monokaiColors,
+    KEY_ACTIONS = defaultKeyActions,
+    SIDEBAR_ACTIONS = defaultSidebarActions
 }) {
     const [open, setOpen] = useState(false);
     const orientation = useOrientation();
