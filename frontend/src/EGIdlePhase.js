@@ -44,7 +44,7 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
         if (e.code === "Space") {
             holdActiveRef.current = true;
             timerRef.current = setTimeout(() => {
-            if (holdActiveRef.current) setReadyToAdvance(true);
+                if (holdActiveRef.current) setReadyToAdvance(true);
             }, HOLD_TIME_MS);
             e.preventDefault();
         }
@@ -61,8 +61,8 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
         window.addEventListener("keydown", onKeyDown);
         window.addEventListener("keyup", onKeyUp);
         return () => {
-        window.removeEventListener("keydown", onKeyDown);
-        window.removeEventListener("keyup", onKeyUp);
+            window.removeEventListener("keydown", onKeyDown);
+            window.removeEventListener("keyup", onKeyUp);
         };
     }, [readyToAdvance, onBegin]);
 
@@ -110,15 +110,6 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
                 />
             )}
             <div style={{ textAlign: "center" }}>
-                {lastResult && (
-                    <div>
-                        <strong>
-                            {lastResult.time ? "Time" : "Time"}
-                        </strong>
-                        <br />
-                        {lastResult.oll} {lastResult.orientation} {lastResult.pll} <br />
-                    </div>
-                )}
                 <p>
                     <b>Hold <kbd>SPACE</kbd> or tap and hold<br/>for {HOLD_TIME_MS} ms, then release to begin.</b>
                 </p>

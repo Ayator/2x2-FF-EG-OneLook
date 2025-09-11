@@ -3,6 +3,7 @@ import EGIdlePhase from "./EGIdlePhase";
 import EGSequenceRenderer from "./EGSequenceRenderer";
 import EGAnswerOLL from "./EGAnswerOLL";
 import EGAnswerPLL from "./EGAnswerPLL";
+import EGTimer from "./EGTimer";
 
 import KeybindingsOverlay from "./utils/KeybindingsOverlay";
 import { useOrientation } from "./hooks/useOrientation";
@@ -93,6 +94,9 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [selectedOrientation, setSelectedOrientation] = useState("F");
     const [selectedPLL, setSelectedPLL] = useState("VANILLA");
     const orientation = useOrientation();
+    // timer
+    const [timerRunning, setTimerRunning] = useState(false);
+    const [timerResetKey, setTimerResetKey] = useState(0);
 
     function handleBegin() {
         if (phase !== "idle") return;
@@ -102,6 +106,17 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
         setSeqStep(0);
         setPhase("showing");
     }
+
+    useEffect(() => {
+        if (phase === "showing") {
+            // When "showing" phase begins (start timer)
+            setTimerRunning(true);
+            setTimerResetKey(k => k + 1); // reset timer for new round
+        } else if (phase === "idle" && lastResult) {
+            // When user finishes the correct answer, stop the timer
+            setTimerRunning(false);
+        }
+    }, [phase]);
 
     // Show next sequence or transition to answer
     useEffect(() => {
@@ -147,6 +162,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
             alignItems: "center", justifyContent: "center"
         }}>
             <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG Recognition Trainer</h2>
+            <EGTimer running={timerRunning} resetKey={timerResetKey} />
             {phase === "idle" && (
                 <EGIdlePhase
                     onBegin={handleBegin}
@@ -154,11 +170,13 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 />
             )}
             {phase === "showing" && (
+                <>
                 <EGSequenceRenderer
                     caseObj={caseObj}
                     colors={colors}
                     seqStep={seqStep}
                 />
+                </>
             )}
             {phase === "answer" && (
                 /* Responsive flex for answer section */ 
