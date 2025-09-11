@@ -80,11 +80,10 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
             {lastResult && (
                 <div>
                     <strong>
-                        {lastResult.isCorrect ? "Correct!" : "Incorrect"}
+                        {lastResult.time ? "Time" : "Time"}
                     </strong>
                     <br />
-                    Chosen: {lastResult.chosen.oll} {lastResult.chosen.orientation} <br />
-                    Expected: {lastResult.expected.oll} {lastResult.expected.orientation}
+                    {lastResult.oll} {lastResult.orientation} {lastResult.pll} <br />
                 </div>
             )}
             <p>

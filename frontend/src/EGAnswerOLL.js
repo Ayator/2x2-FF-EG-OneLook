@@ -43,7 +43,7 @@ function overlayPosition(rect, direction) {
     return { left: `${x}px`, top: `${y}px`, transform: "translate(-50%,-50%)" };
 }
 
-export default function EGAnswerOLL({ caseObj, onOllChange, onAnswer }){
+export default function EGAnswerOLL({ caseObj, onOllChange }){
     const [flickOverlay, setFlickOverlay] = useState(null);
     const buttonRefs = useRef([]);
 
@@ -193,27 +193,27 @@ export default function EGAnswerOLL({ caseObj, onOllChange, onAnswer }){
                 }
             }
             // Space to submit if both chosen
-            if (e.code === "Space" && answer.current.oll) {
-                // Evaluate answer and call onAnswer
-                const selectedOLL = answer.current.oll;
-                const selectedOrientation = answer.current.orientation;
-                let isCorrect = false;
-                if (selectedOLL === caseObj.ollCase) {
-                    const correct = caseObj.orientation;
-                    if (selectedOLL === "H") {
-                    if ((correct === "L" || correct === "R") && (selectedOrientation === "L" || selectedOrientation === "R"))
-                        isCorrect = true;
-                    else if ((correct === "F" || correct === "B") && (selectedOrientation === "F" || selectedOrientation === "B"))
-                        isCorrect = true;
-                    } else {
-                        isCorrect = selectedOrientation === correct;
-                    }
-                }
-                // Reset answer so the next round can begin
-                resetAnswer();
-                setFlickOverlay(null);
-                onAnswer(isCorrect, selectedOLL, selectedOrientation);
-            }
+            // if (e.code === "Space" && answer.current.oll) {
+            //     // Evaluate answer and call onAnswer
+            //     const selectedOLL = answer.current.oll;
+            //     const selectedOrientation = answer.current.orientation;
+            //     let isCorrect = false;
+            //     if (selectedOLL === caseObj.ollCase) {
+            //         const correct = caseObj.orientation;
+            //         if (selectedOLL === "H") {
+            //         if ((correct === "L" || correct === "R") && (selectedOrientation === "L" || selectedOrientation === "R"))
+            //             isCorrect = true;
+            //         else if ((correct === "F" || correct === "B") && (selectedOrientation === "F" || selectedOrientation === "B"))
+            //             isCorrect = true;
+            //         } else {
+            //             isCorrect = selectedOrientation === correct;
+            //         }
+            //     }
+            //     // Reset answer so the next round can begin
+            //     resetAnswer();
+            //     setFlickOverlay(null);
+            //     onAnswer(isCorrect, selectedOLL, selectedOrientation);
+            // }
         }
         function handleKeyUp(e) {
             if(!answer.current.oll) return;
@@ -236,7 +236,7 @@ export default function EGAnswerOLL({ caseObj, onOllChange, onAnswer }){
             window.removeEventListener("keydown", handleKeyDown);
             window.removeEventListener("keyup", handleKeyUp);
         };
-    }, [caseObj, onAnswer]);
+    }, [caseObj]);
 
     // Render
     return (<>

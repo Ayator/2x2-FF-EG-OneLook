@@ -1,15 +1,79 @@
 import React, { useEffect, useState, useRef } from "react";
+import EGIdlePhase from "./EGIdlePhase";
 import SequenceRenderer from "./SequenceRenderer";
 import EGAnswerOLL from "./EGAnswerOLL";
 import EGAnswerPLL from "./EGAnswerPLL";
+
 import KeybindingsOverlay from "./utils/KeybindingsOverlay";
 import { useOrientation } from "./hooks/useOrientation";
-import EGIdlePhase from "./EGIdlePhase";
 
 import { ollCases } from "./data/ollCases";
 
 const colorNames = ["White", "Yellow", "Blue", "Green", "Red", "Orange"];
+const colorPairs = [
+    ["White", "Yellow"],
+    ["Blue", "Green"],
+    ["Red", "Orange"]
+];
+const opposites = Object.fromEntries(
+    colorPairs.flatMap(([a, b]) => [[a, b], [b, a]])
+);
+
+function getRelation(c1, c2) {
+    if (c1 === c2) return "Same";
+    if (opposites[c1] === c2) return "Opposite";
+    return "Unrelated";
+}
+
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+const PLL_CASES = [
+    "VANILLA", "LEFT", "RIGHT", "BACK", "FRONT", "DIAGONAL"
+];
+
+function pickExcluding(arr, exclude = []) {
+    const options = arr.filter(c => !exclude.includes(c));
+    return options[Math.floor(Math.random() * options.length)];
+}
+
+function genTripleForCase(pllCase) {
+    let c1, c2, c3;
+    c1 = pickExcluding(colorNames);
+    if (pllCase === "VANILLA") {
+        // c2 must be equal to c1
+        c2 = c1;
+        // c3 must be Opposite to c2
+        c3 = opposites[c2];
+    } else if (pllCase === "BACK") {
+        // c2 must be equal to c1
+        c2 = c1;
+        // c3 must be unrelated to c2
+        c3 = pickExcluding(colorNames, [c1, opposites[c1]]);
+    } else if (pllCase === "DIAGONAL") {
+        // c2 must be opposite to c1
+        c2 = opposites[c1];
+        // c3 must be equal to c2
+        c3 = c2;
+    } else if (pllCase === "FRONT") {
+        // c2 must be opposite to c1
+        c2 = opposites[c1];
+        // c3 must be unrelated to c2
+        c3 = pickExcluding(colorNames, [c1, opposites[c1]]);
+    } else if (pllCase === "LEFT") {
+        // c2 must be unrelated to c1
+        let unrelateds = colorNames.filter(c => c !== c1 && c !== opposites[c1]);
+        c2 = unrelateds[Math.floor(Math.random() * unrelateds.length)];
+        // c3 must be equal to c2
+        c3 = c2;
+    } else if (pllCase === "RIGHT") {
+        // c2 must be unrelated to c1
+        let unrelateds = colorNames.filter(c => c !== c1 && c !== opposites[c1]);
+        c2 = unrelateds[Math.floor(Math.random() * unrelateds.length)];
+        // c3 must be opposite to c2
+        c3 = opposites[c2];
+    }
+    return [c1, c2, c3];
+}
 
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [phase, setPhase] = useState("idle");
@@ -23,8 +87,10 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const orientation = useOrientation();
 
     function handleBegin() {
-        setCaseObj(pick(ollCases));
-        setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
+        if (phase !== "idle") return;
+        const pllCase = PLL_CASES[Math.floor(Math.random() * PLL_CASES.length)];
+        setColors(genTripleForCase(pllCase));
+        setCaseObj({...pick(ollCases), pllCase})
         setSeqStep(0);
         setPhase("showing");
     }
@@ -39,16 +105,6 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
         setTimeout(() => setSeqStep(s => s + 2), duration * 1000 + pause * 1000);
     }, [seqStep, phase, duration, pause]);
 
-    // Callback from answer phase
-    function handleOLLAnswer(isCorrect, oll, orientation) {
-        setLastResult({
-            isCorrect,
-            chosen: { oll, orientation },
-            expected: { oll: caseObj.ollCase, orientation: caseObj.orientation },
-        });
-        setPhase("idle");
-    }
-
     useEffect(() => {
         // This effect runs whenever any answer is updated.
         if (!caseObj) return;
@@ -60,11 +116,16 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 (["F", "B"].includes(caseObj.orientation) && ["F", "B"].includes(selectedOrientation))
             )
         );
-        const correctPLL = selectedPLL === caseObj.pllCase; // or whatever field(s) hold the correct PLL info
+        const correctPLL = selectedPLL === caseObj.pllCase;
 
+        // All correct! End the phase immediately.
         if (correctOLL && correctOrientation && correctPLL) {
-            // All correct! End the phase after a short delay for feedback, or immediately.
-            setTimeout(() => setPhase("idle"), 500);
+            setLastResult({
+                oll: selectedOLL,
+                orientation: selectedOrientation,
+                pll: selectedPLL
+            });
+            setPhase("idle");
         }
     }, [selectedOLL, selectedOrientation, selectedPLL, caseObj]);
 
@@ -103,7 +164,6 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                     <EGAnswerOLL
                         caseObj={caseObj}
                         onOllChange={(oll, orientation) => { setSelectedOLL(oll); setSelectedOrientation(orientation); }}
-                        onAnswer={handleOLLAnswer}
                     />
                     <EGAnswerPLL
                         caseObj={caseObj}
