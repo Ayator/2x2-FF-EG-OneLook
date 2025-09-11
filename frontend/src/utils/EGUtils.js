@@ -1,0 +1,77 @@
+import { ollCasesFolder, egImagesFolder } from  "./locationUtils"
+
+// EG
+
+export function getEGImageSrc(ollName, pllCaseType) {
+    const code = ollName ? OLL_CODES[ollName.toUpperCase()] : "O";
+    return `${egImagesFolder}/${code}_${pllCaseType}.svg`;
+}
+
+// OLL
+
+export function ollImage(oll, orientation = "F") {
+  return `/${ollCasesFolder}/${oll}_${orientation}.jpg`;
+}
+
+// Helper: mapping OLL name to file code
+export const OLL_CODES = {
+    SUNE: "S", 
+    ANTISUNE: "A",
+    T: "T",
+    L: "L",
+    U: "U",
+    PI: "P",
+    H: "H"
+};
+
+export const ROTATION_DEGREES = { F: 0, L: 90, B: 180, R: 270 };
+
+// PLL
+// The moves as start/end pairs in order: BACK, DIAG1, RIGHT, DIAG2, FRONT, DIAG1, LEFT, DIAG2
+export const PLL_MOVES = [
+    ["BL", "BR"],   // 0 BACK
+    ["BL", "FR"],   // 1 DIAGONAL1
+    ["BR", "FR"],   // 2 RIGHT
+    ["BR", "FL"],   // 3 DIAGONAL2
+    ["FR", "FL"],   // 4 FRONT
+    ["FR", "BL"],   // 5 DIAGONAL1 (reverse)
+    ["FL", "BL"],   // 6 LEFT
+    ["FL", "BR"],   // 7 DIAGONAL2 (reverse)
+];
+
+export const PIECE_KEY_MAP = {
+    d: "BL",
+    f: "BR",
+    c: "FL",
+    v: "FR",
+};
+
+export const PLL_CASES = ["BACK", "DIAGONAL1", "RIGHT", "DIAGONAL2", "FRONT", "DIAGONAL1", "LEFT", "DIAGONAL2"];
+export const ORIENT_TO_STEPS = { F: 0, R: 2, B: 4, L: 6 }; // Each orientation is 2 steps in this 8-direction list
+
+export function getMoveIndex(start, end) {
+    for (let i = 0; i < 8; i++) {
+        if ((PLL_MOVES[i][0] === start && PLL_MOVES[i][1] === end) ||
+            (PLL_MOVES[i][1] === start && PLL_MOVES[i][0] === end)) {
+        return i;
+        }
+    }
+    return null;
+}
+
+/**
+ * Returns the visual pll case to display,
+ * given the logicalPerm, orientation, and list of all PLL_CASES.
+ * - logicalPerm: string of the logical permutation (e.g. "BACK")
+ * - orientation: cube orientation ("F", "R", "B", "L")
+ * - PLL_CASES: ordered array of all case labels (length 8)
+ * - ORIENT_TO_STEPS: map of orientation letter to index step (F:0, R:2, ...)
+ */
+export function getDisplayPLLCase(logicalPerm, orientation = "F") {
+    if (logicalPerm === "VANILLA") return "VANILLA";
+    const logicalIdx = PLL_CASES.findIndex(v => v === logicalPerm);
+    if (logicalIdx === -1) return "VANILLA";
+    const steps = ORIENT_TO_STEPS[orientation || "F"];
+    const displayIdx = (logicalIdx + steps) % PLL_CASES.length;
+    return PLL_CASES[displayIdx];
+}
