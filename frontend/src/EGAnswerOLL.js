@@ -53,8 +53,7 @@ export default function EGAnswerOLL({ caseObj, onOllChange }){
     });
 
     function resetAnswer(){
-        answer.current.oll = null;
-        answer.current.orientation = "F";
+        handleOllChange(null, "F");
     }
 
     function handleOllChange(oll, orientation){
@@ -132,7 +131,7 @@ export default function EGAnswerOLL({ caseObj, onOllChange }){
     }
     // Handle pointer up to finalize or cancel
     function onPointerUp(e) {
-        const { dragging, btnOll, currentOrientation, btnRect } = dragRef.current;
+        const { dragging, btnRect } = dragRef.current;
         if(!dragging) return;
 
         setFlickOverlay({
@@ -167,6 +166,10 @@ export default function EGAnswerOLL({ caseObj, onOllChange }){
 
     // Handle keyboard input for OLL and direction
     useEffect(() => {
+        // Reset answer so the next round can begin
+        resetAnswer();
+        setFlickOverlay(null);
+        
         function handleKeyDown(e) {
             const key = e.key.toLowerCase();
             

@@ -3,7 +3,6 @@ import {
     ROTATION_DEGREES,
     PIECE_KEY_MAP,
     PLL_CASES,
-    ORIENT_TO_STEPS,
     getMoveIndex,
     getEGImageSrc,
     getDisplayPLLCase

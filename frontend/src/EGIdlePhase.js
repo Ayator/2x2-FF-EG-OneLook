@@ -69,7 +69,6 @@ export default function EGIdlePhase({ onBegin, lastResult }) {
     let imgSrc = null;
     let displayRotation = 0;
     if (lastResult && lastResult.oll && lastResult.orientation && lastResult.pll){
-        console.log(lastResult);
         const displayPLL = getDisplayPLLCase(lastResult.pll, lastResult.orientation);
         imgSrc = getEGImageSrc(lastResult?.oll, displayPLL);
         displayRotation = ROTATION_DEGREES[lastResult.orientation] ?? 0;
