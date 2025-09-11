@@ -1,15 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-
-// Helper: mapping OLL name to file code
-const OLL_CODES = {
-    SUNE: "S",
-    ANTISUNE: "A",
-    T: "T",
-    L: "L",
-    U: "U",
-    PI: "P",
-    H: "H",
-};
+import { OLL_CODES, ROTATION_DEGREES } from "./utils/ollUtils";
+import { egImagesFolder } from  "./utils/locationUtils"
 
 // The moves as start/end pairs in order: BACK, DIAG1, RIGHT, DIAG2, FRONT, DIAG1, LEFT, DIAG2
 const MOVES = [
@@ -33,10 +24,6 @@ const PIECE_KEY_MAP = {
 const CASES = ["BACK", "DIAGONAL1", "RIGHT", "DIAGONAL2", "FRONT", "DIAGONAL1", "LEFT", "DIAGONAL2"];
 const ORIENT_TO_STEPS = { F: 0, R: 2, B: 4, L: 6 }; // Each orientation is 2 steps in this 8-direction list
 
-const imagesFolder = './eg_cases';
-
-const ROTATION_DEGREES = { F: 0, L: 90, B: 180, R: 270 };
-
 function getMoveIndex(start, end) {
     for (let i = 0; i < 8; i++) {
         if ((MOVES[i][0] === start && MOVES[i][1] === end) ||
@@ -49,7 +36,7 @@ function getMoveIndex(start, end) {
 
 function getImageSrc(ollName, caseType) {
     const code = ollName ? OLL_CODES[ollName.toUpperCase()] : "O";
-    return `${imagesFolder}/${code}_${caseType}.svg`;
+    return `${egImagesFolder}/${code}_${caseType}.svg`;
 }
 
 function animateAngle(current, target, setAngle, duration = 300) {
