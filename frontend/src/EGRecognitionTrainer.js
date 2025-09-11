@@ -3,10 +3,10 @@ import SequenceRenderer from "./SequenceRenderer";
 import AnswerOLL from "./AnswerOLL";
 import AnswerPLL from "./AnswerPLL";
 import KeybindingsOverlay from "./utils/KeybindingsOverlay";
-import { useOrientation } from "./hooks/useOrientation"; // or your path
+import { useOrientation } from "./hooks/useOrientation";
+import EGIdlePhase from "./EGIdlePhase";
 
 import { ollCases } from "./data/ollCases";
-import { useSpacebarHold } from "./hooks/useSpacebarHold";
 
 const colorNames = ["White", "Yellow", "Blue", "Green", "Red", "Orange"];
 function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
@@ -21,17 +21,13 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [selectedOrientation, setSelectedOrientation] = useState("F");
     const [selectedPLL, setSelectedPLL] = useState("VANILLA");
     const orientation = useOrientation();
-    
-    // Handle spacebar hold→release for idle→showing
-    useSpacebarHold(100, () => {
-        if (phase === "idle") {
-            // Start new round!
-            setCaseObj(pick(ollCases));
-            setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
-            setSeqStep(0);
-            setPhase("showing");
-        }
-    });
+
+    function handleBegin() {
+        setCaseObj(pick(ollCases));
+        setColors([pick(colorNames), pick(colorNames), pick(colorNames)]);
+        setSeqStep(0);
+        setPhase("showing");
+    }
 
     // Show next sequence or transition to answer
     useEffect(() => {
@@ -83,22 +79,10 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
         }}>
             <h2 style={{ color: "#324b74", marginBottom: "24px" }}>EG OLL Recognition Trainer</h2>
             {phase === "idle" && (
-                <div>
-                    <h2>Ready for next round</h2>
-                    {lastResult && (
-                        <div>
-                            <strong>
-                                {lastResult.isCorrect ? "Correct!" : "Incorrect"}
-                            </strong>
-                            <br />
-                            Chosen: {lastResult.chosen.oll} {lastResult.chosen.orientation} <br />
-                            Expected: {lastResult.expected.oll} {lastResult.expected.orientation}
-                        </div>
-                    )}
-                    <p>
-                        Hold <kbd>Space</kbd> for 0.1 seconds, then release to begin.
-                    </p>
-                </div>
+                <EGIdlePhase
+                    onBegin={handleBegin}
+                    lastResult={lastResult}
+                />
             )}
             {phase === "showing" && (
                 <SequenceRenderer
