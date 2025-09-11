@@ -75,6 +75,14 @@ function genTripleForCase(pllCase) {
     return [c1, c2, c3];
 }
 
+function normalizePLL(pll) {
+    if (!pll) return pll;
+    const str = pll.toUpperCase();
+    if (str === "DIAGONAL1" || str === "DIAGONAL2") return "DIAGONAL";
+    return str;
+}
+
+
 export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [phase, setPhase] = useState("idle");
     const [lastResult, setLastResult] = useState(null);
@@ -116,7 +124,7 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
                 (["F", "B"].includes(caseObj.orientation) && ["F", "B"].includes(selectedOrientation))
             )
         );
-        const correctPLL = selectedPLL === caseObj.pllCase;
+        const correctPLL = normalizePLL(selectedPLL) === normalizePLL(caseObj.pllCase);
 
         // All correct! End the phase immediately.
         if (correctOLL && correctOrientation && correctPLL) {
