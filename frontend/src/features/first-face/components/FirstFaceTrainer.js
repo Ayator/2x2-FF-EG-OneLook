@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import AlgorithmCard from "./AlgorithmCard";
-import { Algorithm } from "./utils/algorithmManager";
-import { assetsPath, jsonUrl } from "./utils/locationUtils";
+import AlgorithmCard from "../../../components/AlgorithmCard/AlgorithmCard";
+import { Algorithm } from "../../../utils/algorithmManager";
+import { assetsPath, jsonUrl } from "../../../utils/locationUtils";
 
 function flattenAndShuffle(algsData) {
   const allCases = [];

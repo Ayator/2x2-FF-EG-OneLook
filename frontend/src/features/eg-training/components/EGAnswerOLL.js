@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import AnswerHexRow from "./AnswerHexRow";
+import AnswerHexRow from "../../../components/AnswerHexRow/AnswerHexRow";
 
-import { ollImage } from "./utils/EGUtils";
+import { ollImage } from "../../../utils/EGUtils";
 
 const answerHex = [
     [{ label: "SUNE" }, { label: "ANTISUNE" }],

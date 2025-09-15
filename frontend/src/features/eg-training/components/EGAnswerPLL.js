@@ -6,7 +6,7 @@ import {
     getMoveIndex,
     getEGImageSrc,
     getDisplayPLLCase
-} from "./utils/EGUtils";
+} from "../../../utils/EGUtils";
 
 function animateAngle(current, target, setAngle, duration = 300) {
     let start;

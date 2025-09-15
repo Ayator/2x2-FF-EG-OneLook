@@ -5,10 +5,10 @@ import EGAnswerOLL from "./EGAnswerOLL";
 import EGAnswerPLL from "./EGAnswerPLL";
 import EGTimer from "./EGTimer";
 
-import KeybindingsOverlay from "./utils/KeybindingsOverlay";
-import { useOrientation } from "./hooks/useOrientation";
+import KeybindingsOverlay from "../../../components/overlays/KeybindingsOverlay";
+import { useOrientation } from "../../../hooks/useOrientation";
 
-import { ollCases } from "./data/ollCases";
+import { ollCases } from "../../../data/ollCases";
 
 const colorNames = ["White", "Yellow", "Blue", "Green", "Red", "Orange"];
 const colorPairs = [

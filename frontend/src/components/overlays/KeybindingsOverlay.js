@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useOrientation } from "../hooks/useOrientation";
+import { useOrientation } from "../../hooks/useOrientation";
 
 const KEY_ROWS = [
     [ "Esc"  , "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "-", "=",  "Backspace", "PrtSc" ],

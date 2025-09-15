@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
-import "./css/AlgorithmCard.css";
-import { useFineTap } from "./hooks/useFineTap"
+import "./AlgorithmCard.css";
+import { useFineTap } from "../../hooks/useFineTap"
 
 function AlgorithmCard({ setupAlg, solutionAlg, setupImg, solutionImg }) {
   // Flip logic

@@ -5,7 +5,7 @@ import {
     getDisplayPLLCase,
     formatTimer,
     avg12
-} from "./utils/EGUtils";
+} from "../../../utils/EGUtils";
 
 const MONOKAI = {
   bg: "#2d2a2e",
@@ -36,13 +36,15 @@ export default function EGIdleSidebar({ history = [], themeColors = MONOKAI }) {
         };
     }, [modalIdx]);
 
+    console.log("history", history);
     const solveRows = history.map((s, i) => ({
         n: i + 1,
         t: formatTimer(s.time),
-        avg: avg12(history.slice(0, i + 1)),
+        avg12: avg12(history.slice(0, i + 1)),
         data: s
     })).reverse(); // latest first
 
+    console.log(solveRows);
     return (
         <div style={{
             width: 238, minWidth: 160, maxWidth: 340,
@@ -80,7 +82,7 @@ export default function EGIdleSidebar({ history = [], themeColors = MONOKAI }) {
                         onClick={() => setModalIdx(history.length - row.n)}>
                         {row.t}
                     </td>
-                    <td style={{ textAlign: "center", color: themeColors.highlight, fontWeight: 600 }}>{row.avg}</td>
+                    <td style={{ textAlign: "center", color: themeColors.highlight, fontWeight: 600 }}>{row.avg12}</td>
                     </tr>
                 ))}
                 </tbody>

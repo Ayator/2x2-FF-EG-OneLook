@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "./HomePage";
-import FirstFaceTrainer from "./FirstFaceTrainer";
-import EGRecognitionTrainer from "./EGRecognitionTrainer";
+import HomePage from "./features/home/HomePage";
+import FirstFaceTrainer from "./features/first-face/components/FirstFaceTrainer";
+import EGRecognitionTrainer from "./features/eg-training/components/EGRecognitionTrainer";
 
 function App() {
   return (

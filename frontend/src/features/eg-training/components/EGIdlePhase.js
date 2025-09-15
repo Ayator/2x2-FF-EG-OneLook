@@ -3,7 +3,7 @@ import {
     ROTATION_DEGREES,
     getEGImageSrc,
     getDisplayPLLCase
-} from "./utils/EGUtils";
+} from "../../../utils/EGUtils";
 import EGTimesSidebar from "./EGTimesSidebar";
 
 const HOLD_TIME_MS = 100;

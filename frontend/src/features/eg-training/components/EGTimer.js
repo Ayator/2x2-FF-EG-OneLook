@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { formatTimer } from "./utils/EGUtils";
+import { formatTimer } from "../../../utils/EGUtils";
 
 // Monokai-like default
 const MONOKAI_COLORS = {
