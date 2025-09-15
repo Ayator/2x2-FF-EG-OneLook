@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {
+    ROTATION_DEGREES,
     getEGImageSrc,
+    getDisplayPLLCase,
     formatTimer,
     avg12
 } from "./utils/EGUtils";
@@ -90,9 +92,11 @@ export default function EGIdleSidebar({ history = [], themeColors = MONOKAI }) {
 }
 
 function SolveModal({ solve }) {
+    const displayPLL = getDisplayPLLCase(solve.pll, solve.orientation);
     const imgSrc = solve
-        ? getEGImageSrc(solve.oll, solve.pll, solve.orientation)
+        ? getEGImageSrc(solve.oll, displayPLL)
         : null;
+    const displayRotation = ROTATION_DEGREES[solve.orientation] ?? 0;
     return (
         <div className="eg-modal-backdrop" style={{
             position: "fixed",
@@ -117,15 +121,16 @@ function SolveModal({ solve }) {
                 color: "#f8f8f2"
             }}>
                 <div style={{ marginBottom: 22, fontSize: 22, fontWeight: 700 }}>
-                EG Case
+                    EG Case
                 </div>
                 {imgSrc && (
                 <img
                     src={imgSrc}
                     alt="EG Case"
                     style={{
-                    width: 160, height: 160, marginBottom: 20, borderRadius: 14,
-                    background: "#101010", boxShadow: "0 2px 18px #0006"
+                        width: 160, height: 160, marginBottom: 20, borderRadius: 14,
+                        background: "#101010", boxShadow: "0 2px 18px #0006",
+                        transform: `rotate(${displayRotation}deg)`
                     }}
                 />
                 )}

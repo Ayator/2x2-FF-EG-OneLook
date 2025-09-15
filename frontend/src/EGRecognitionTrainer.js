@@ -99,7 +99,6 @@ export default function EGRecognitionTrainer({ duration = 0.5, pause = 0.25 }) {
     const [timerResetKey, setTimerResetKey] = useState(0);
     const [timerValue, setTimerValue] = useState(0);
     const [history, setHistory] = useState([]);
-
     
     document.title = "EG Trainer";
 
